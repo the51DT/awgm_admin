@@ -1,8 +1,8 @@
 # awgm
 
-## Project setup
+## Project setup - Vue3 CLI + Vuetify 3 Vue CLI(preview) 
 ```
-npm install
+vue add vuetify
 ```
 
 ### Compiles and hot-reloads for development
