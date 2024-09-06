@@ -1,7 +1,6 @@
-<!-- src/layouts/AppSidebar.vue -->
 <template>
   <div class="lnb_admin" :class="{ on: drawer }">
-    <v-list dense>
+    <v-list dense class="menu-list">
       <!-- Dashboard Title -->
       <v-list-item
         class="subTitle"
@@ -62,6 +61,15 @@
         </template>
       </template>
     </v-list>
+
+    <div class="sidebar-buttons">
+      <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+        <v-btn class="sidebar-btn" color="white">GUT Morning 바로가기</v-btn>
+      </a>
+      <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+        <v-btn class="sidebar-btn" color="white">GUT M. Korea 바로가기</v-btn>
+      </a>
+    </div>
   </div>
 </template>
 
@@ -75,47 +83,55 @@ const router = useRouter();
 
 // eslint-disable-next-line no-unused-vars
 const menuItems = ref([
-  { text: "Amway Admin", subMenu: [], path: "/" },
+  { text: "Gut Morning Admin", subMenu: [], path: "/" },
   {
-    text: "시승자 관리",
+    text: "메인 관리",
     subMenu: [
-      { text: "시승자 명단", path: "/AppMenu2" },
-      { text: "시승자 등록", path: "/AppMenu2" },
-      { text: "시승 동의서", path: "/AppMenu2" },
+      { text: "- 배너 관리", path: "/AppMenu2" },
+      { text: "- 팝업 관리", path: "/AppMenu2" },
+      { text: "- 것모닝 제품 링크 관리", path: "/AppMenu2" },
     ],
   },
   {
-    text: "시승차량 관리",
+    text: "게시판 관리",
     subMenu: [
-      { text: "차량 목록", path: "/AppMenu3" },
-      { text: "차량 등록", path: "/AppMenu3" },
-      { text: "운행 이력", path: "/AppMenu3" },
-      { text: "차량번호 관리", path: "/AppMenu3" },
+      { text: "- 공지사항", path: "/AppMenu3" },
+      { text: "- FAQ", path: "/AppMenu3" },
+      { text: "- C/S 소통 게시판", path: "/AppMenu3" },
     ],
   },
   {
-    text: "시승차량 체크리스트",
-    subMenu: [{ text: "체크리스트", path: "/AppMenu3" }],
-  },
-  {
-    text: "운영 정보 공유",
+    text: "회원 관리",
     subMenu: [
-      { text: "코스정보 공유", path: "/AppMenu3" },
-      { text: "DEMS 매뉴얼", path: "/AppMenu3" },
+      { text: "- 회원 목록", path: "/AppMenu3" },
+      { text: "- 휴먼회원 목록", path: "/AppMenu3" },
+      { text: "- 접속 로그", path: "/AppMenu3" },
     ],
   },
   {
-    text: "리포트",
+    text: "첼린지 관리",
     subMenu: [
-      { text: "시승리포트", path: "/AppMenu3" },
-      { text: "시승차 이슈 리포트", path: "/AppMenu3" },
+      { text: "- 첼린지", path: "/AppMenu3" },
+      { text: "- 보상 수상 대상자", path: "/AppMenu3" },
+      { text: "- 팀 목록", path: "/AppMenu3" },
     ],
   },
   {
-    text: "STAFF 알림",
+    text: "미션 관리",
     subMenu: [
-      { text: "공지사항", path: "/AppMenu3" },
-      { text: "행사FEED", path: "/AppMenu3" },
+      { text: "- 미션 인증 현황", path: "/AppMenu3" },
+      { text: "- 미션 인증 로그", path: "/AppMenu3" },
+    ],
+  },
+  {
+    text: "통계",
+    subMenu: [{ text: "- 통계", path: "/AppMenu3" }],
+  },
+  {
+    text: "시스템 관리",
+    subMenu: [
+      { text: "- 관리자 관리", path: "/AppMenu3" },
+      { text: "- 코드 관리", path: "/AppMenu3" },
     ],
   },
 ]);
@@ -129,15 +145,11 @@ const handleClick = (item) => {
 
 // eslint-disable-next-line no-unused-vars
 const isSelected = (item) => {
-  // Implement selection logic if needed
   return false;
 };
 </script>
 
 <style scoped lang="scss">
-.my-drawer {
-  border: none;
-}
 .lnb_admin {
   background: #3f4d66;
   position: fixed;
@@ -145,20 +157,32 @@ const isSelected = (item) => {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+
+  /* Ensure menu list takes up available space and makes sidebar scrollable */
+  .menu-list {
+    overflow-y: auto; /* Enables scrolling if content overflows */
+  }
   .v-list {
-    padding: 0 0;
-    border: none;
+    padding: 0;
+    .v-list-item {
+      min-height: 40px;
+    }
+    .v-list-item.list_1dep {
+      min-height: 50px;
+    }
   }
   .subTitle {
     margin: 0;
-    padding: 20px 16px;
+
+    height: 60px;
     background-color: #2c3e50;
-    height: 64px;
+
     .btn_menu {
       font-weight: 700;
       color: #ffffff;
-      line-height: 18px;
+
       font-size: 20px;
       transition: background 0.3s ease;
     }
@@ -171,7 +195,7 @@ const isSelected = (item) => {
       font-size: 18px;
       font-weight: 700;
       color: #ffffff;
-      line-height: 20px;
+
       transition: background 0.3s ease;
     }
 
@@ -184,7 +208,7 @@ const isSelected = (item) => {
       content: "";
       display: block;
       width: 100%;
-      height: 32px;
+
       background: #ffffff;
       border-radius: 6px;
       opacity: 0.2;
@@ -200,6 +224,27 @@ const isSelected = (item) => {
         font-weight: 700;
         color: #c2c2c2;
       }
+    }
+  }
+
+  .sidebar-buttons {
+    margin-top: auto; /* Push buttons to the bottom */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+    background-color: #3f4d66; /* Background color to match the sidebar */
+
+    a {
+      text-decoration: none; /* Remove underline from links */
+    }
+
+    .sidebar-btn {
+      width: 100%;
+      background-color: #ffffff; /* Button color */
+      color: #000000; /* Text color */
+      height: 48px; /* Set a fixed height for buttons */
     }
   }
 }
