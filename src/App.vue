@@ -1,23 +1,36 @@
 <template>
   <v-app>
+    <!-- 상단 앱 바 -->
+    <app-header />
+
+    <!-- 사이드바 설정 -->
+    <v-navigation-drawer v-model="drawer" app class="my-drawer">
+      <app-sidebar />
+    </v-navigation-drawer>
+
+    <!-- 메인 컨텐츠 -->
     <v-main>
-      <HelloWorld/>
+      <router-view />
     </v-main>
+
+    <!-- 하단 푸터 -->
+    <app-footer />
   </v-app>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import { ref, provide } from "vue";
+import AppHeader from "./layouts/AppHeader.vue";
+import AppSidebar from "./layouts/AppSidebar.vue";
+import AppFooter from "./layouts/AppFooter.vue";
 
-export default {
-  name: 'App',
+const drawer = ref(true);
 
-  components: {
-    HelloWorld,
-  },
+const toggleDrawer = () => {
+  drawer.value = !drawer.value;
+};
 
-  data: () => ({
-    //
-  }),
-}
+provide("layout", { drawer, toggleDrawer });
 </script>
+
+<style></style>
