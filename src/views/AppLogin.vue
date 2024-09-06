@@ -6,12 +6,10 @@
         <div class="logo-container">
           <h2>Amway GUTmorning</h2>
           <p>Amway GUT morning ADMIN Login</p>
-          <!-- <img :src="logoSrc" alt="Logo" class="logo-img" />
-          <img :src="subLogoSrc" alt="Sub Logo" class="sub-logo-img" /> -->
         </div>
         <v-card class="pa-4 login-card">
           <v-card-title>
-            <h3 class="box-title">Log in</h3>
+            <h3 class="box-title text-left">Log in</h3>
           </v-card-title>
 
           <v-card-subtitle>
@@ -43,7 +41,7 @@
             </v-form>
           </v-card-subtitle>
 
-          <v-card-subtitle class="text-left login-sub">
+          <v-card-subtitle class="login-sub">
             <p>
               * 비밀번호 5회 오류 시 계정 사용이 제한됩니다. (이전 입력 오류
               횟수 누적)<br />
@@ -59,13 +57,6 @@
 <script setup>
 // eslint-disable-next-line no-unused-vars
 import { ref } from "vue";
-
-// 이미지 파일을 가져옵니다.
-// eslint-disable-next-line no-unused-vars
-const logoSrc = new URL("@/assets/images/logo.svg", import.meta.url).href;
-// eslint-disable-next-line no-unused-vars
-const subLogoSrc = new URL("@/assets/images/sub_logo.svg", import.meta.url)
-  .href;
 </script>
 
 <style scoped lang="scss">
@@ -74,47 +65,20 @@ const subLogoSrc = new URL("@/assets/images/sub_logo.svg", import.meta.url)
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
   h2 {
-    font-size: 3em;
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
   }
 
   p {
-    font-size: 1em;
-  }
-
-  .box-title {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 2.5em;
-  }
-
-  .text-center {
-    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 2em;
   }
 
   .logo-container {
     margin-bottom: 24px; // 이미지와 로그인 박스 간의 간격
-  }
-
-  .logo-img,
-  .sub-logo-img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-  }
-
-  .logo-img {
-    width: 100%; // 로고 이미지 너비 설정
-    max-width: 400px; // 최대 너비 설정
-  }
-
-  .sub-logo-img {
-    width: 100%; // 서브 로고 이미지 너비 설정
-    max-width: 300px; // 최대 너비 설정
-    margin-top: 16px; // 이미지 간의 간격 조정
   }
 
   .login-card {
@@ -122,21 +86,63 @@ const subLogoSrc = new URL("@/assets/images/sub_logo.svg", import.meta.url)
     width: 100%;
     margin: 0 auto;
     border-radius: 24px;
+    border: 1px solid #e5e5e5; // 테두리 두께와 색상 설정
+  }
+
+  .box-title {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    font-family: "Poppins", sans-serif;
   }
 
   .login-sub {
     text-align: center;
     margin-top: 16px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #666;
   }
 
   .custom-btn {
-    background-color: #000 !important; // 검은색 배경
-    color: #fff !important; // 하얀색 글씨
-    font-size: 16px !important; // 버튼의 글자 크기 조정
-    font-weight: 700 !important; // 버튼의 글자 두께 조정
-    border-radius: 12px !important; // 둥근 모서리 설정
-    padding: 12px 24px !important; // 버튼의 패딩 조정
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important; // 버튼에 그림자 추가
+    background-color: #000 !important;
+    color: #fff !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    border-radius: 12px !important;
+    padding: 24px 24px !important;
+  }
+
+  .custom-btn:hover {
+    background-color: #333 !important; // 호버 시 버튼의 배경색
+  }
+
+  // 미디어 쿼리: 모바일 화면에서 스타일 조정
+  @media (max-width: 600px) {
+    .login-container {
+      padding: 16px; // 모바일 화면에서 여백 추가
+    }
+
+    .logo-container {
+      h2 {
+        font-size: 2em;
+      }
+      p {
+        font-size: 1em;
+      }
+    }
+
+    .login-card {
+      border-radius: 16px; // 모바일 화면에서 모서리를 덜 둥글게 설정
+    }
+
+    .box-title {
+      font-size: 2em;
+    }
+
+    .custom-btn {
+      font-size: 14px !important; // 모바일 화면에서 버튼 글자 크기 조정
+      padding: 10px 20px !important; // 모바일 화면에서 버튼 패딩 조정
+    }
   }
 }
 </style>
