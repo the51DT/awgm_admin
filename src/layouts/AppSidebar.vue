@@ -95,7 +95,7 @@ const menuItems = ref([
   {
     text: "게시판 관리",
     subMenu: [
-      { text: "- 공지사항", path: "/AppMenu3" },
+      { text: "- 공지사항", path: "/AppLogin" },
       { text: "- FAQ", path: "/AppMenu3" },
       { text: "- C/S 소통 게시판", path: "/AppMenu3" },
     ],
