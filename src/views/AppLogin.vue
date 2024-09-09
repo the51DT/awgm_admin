@@ -78,15 +78,15 @@ import { ref } from "vue";
   }
 
   .logo-container {
-    margin-bottom: 24px; // 이미지와 로그인 박스 간의 간격
+    margin-bottom: 24px;
   }
 
   .login-card {
-    max-width: 500px; // 로그인 박스의 최대 너비를 500px로 설정
+    max-width: 500px;
     width: 100%;
     margin: 0 auto;
     border-radius: 24px;
-    border: 1px solid #e5e5e5; // 테두리 두께와 색상 설정
+    border: 1px solid #e5e5e5;
   }
 
   .box-title {
@@ -113,13 +113,13 @@ import { ref } from "vue";
   }
 
   .custom-btn:hover {
-    background-color: #333 !important; // 호버 시 버튼의 배경색
+    background-color: #333 !important;
   }
 
   // 미디어 쿼리: 모바일 화면에서 스타일 조정
   @media (max-width: 600px) {
     .login-container {
-      padding: 16px; // 모바일 화면에서 여백 추가
+      padding: 16px;
     }
 
     .logo-container {
@@ -132,7 +132,8 @@ import { ref } from "vue";
     }
 
     .login-card {
-      border-radius: 16px; // 모바일 화면에서 모서리를 덜 둥글게 설정
+      border-radius: 16px;
+      max-width: 400px;
     }
 
     .box-title {
@@ -140,8 +141,8 @@ import { ref } from "vue";
     }
 
     .custom-btn {
-      font-size: 14px !important; // 모바일 화면에서 버튼 글자 크기 조정
-      padding: 10px 20px !important; // 모바일 화면에서 버튼 패딩 조정
+      font-size: 14px !important;
+      padding: 10px 20px !important;
     }
   }
 }

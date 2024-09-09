@@ -228,23 +228,23 @@ const isSelected = (item) => {
   }
 
   .sidebar-buttons {
-    margin-top: auto; /* Push buttons to the bottom */
+    margin-top: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 8px;
     padding: 16px;
-    background-color: #3f4d66; /* Background color to match the sidebar */
+    background-color: #3f4d66;
 
     a {
-      text-decoration: none; /* Remove underline from links */
+      text-decoration: none;
     }
 
     .sidebar-btn {
       width: 100%;
-      background-color: #ffffff; /* Button color */
-      color: #000000; /* Text color */
-      height: 48px; /* Set a fixed height for buttons */
+      background-color: #ffffff;
+      color: #000000;
+      height: 48px;
     }
   }
 }
