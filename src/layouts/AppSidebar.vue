@@ -85,9 +85,13 @@ const router = useRouter();
 const menuItems = ref([
   { text: "Gut Morning Admin", subMenu: [], path: "/" },
   {
+    text: "로그인",
+    subMenu: [{ text: "- 로그인", path: "/AppLogin" }],
+  },
+  {
     text: "메인 관리",
     subMenu: [
-      { text: "- 배너 관리", path: "/AppMenu2" },
+      { text: "- 배너 관리", path: "/AppMenu3" },
       { text: "- 팝업 관리", path: "/AppMenu2" },
       { text: "- 것모닝 제품 링크 관리", path: "/AppMenu2" },
     ],
@@ -95,15 +99,15 @@ const menuItems = ref([
   {
     text: "게시판 관리",
     subMenu: [
-      { text: "- 공지사항", path: "/AppLogin" },
-      { text: "- FAQ", path: "/AppMenu3" },
+      { text: "- 공지사항", path: "/AppMenu3" },
+      { text: "- FAQ", path: "/AppMenu2" },
       { text: "- C/S 소통 게시판", path: "/AppMenu3" },
     ],
   },
   {
     text: "회원 관리",
     subMenu: [
-      { text: "- 회원 목록", path: "/AppMenu3" },
+      { text: "- 회원 목록", path: "/DataTables" },
       { text: "- 휴먼회원 목록", path: "/AppMenu3" },
       { text: "- 접속 로그", path: "/AppMenu3" },
     ],

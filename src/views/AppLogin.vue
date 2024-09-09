@@ -43,8 +43,8 @@
 
           <v-card-subtitle class="login-sub">
             <p>
-              * 비밀번호 5회 오류 시 계정 사용이 제한됩니다. (이전 입력 오류
-              횟수 누적)<br />
+              * 비밀번호 5회 오류 시 계정 사용이 제한됩니다. <br />(이전 입력
+              오류 횟수 누적)<br />
               * 로그인 관련 문의사항은 관리자에게 문의하세요.
             </p>
           </v-card-subtitle>
@@ -57,6 +57,8 @@
 <script setup>
 // eslint-disable-next-line no-unused-vars
 import { ref } from "vue";
+
+const login = () => {};
 </script>
 
 <style scoped lang="scss">
@@ -82,7 +84,7 @@ import { ref } from "vue";
   }
 
   .login-card {
-    max-width: 500px;
+    max-width: 600px;
     width: 100%;
     margin: 0 auto;
     border-radius: 24px;
@@ -96,7 +98,7 @@ import { ref } from "vue";
   }
 
   .login-sub {
-    text-align: center;
+    text-align: left;
     margin-top: 16px;
     font-size: 14px;
     line-height: 24px;
@@ -116,7 +118,6 @@ import { ref } from "vue";
     background-color: #333 !important;
   }
 
-  // 미디어 쿼리: 모바일 화면에서 스타일 조정
   @media (max-width: 600px) {
     .login-container {
       padding: 16px;
