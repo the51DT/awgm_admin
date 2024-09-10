@@ -1,8 +1,8 @@
 <template>
-  <v-app class="test">
+  <v-app>
     <v-main class="pa-10">
       <v-card class="custom" flat>
-        <v-card-title class="card-title">배너 관리</v-card-title>
+        <admin-title title="배너 관리"></admin-title>
 
         <div class="input-container">
           <v-select
@@ -64,7 +64,12 @@
 </template>
 
 <script>
+import AdminTitle from "@/components/AdminTitle.vue";
+
 export default {
+  components: {
+    AdminTitle,
+  },
   data() {
     return {
       search: "",
