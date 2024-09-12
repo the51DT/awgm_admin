@@ -254,7 +254,7 @@ export default {
   }
 }
 .custom-table {
-  max-height: calc(100vh - 500px);
+  max-height: calc(100vh - 400px);
 
   .v-table {
     border-top: 3px solid #00498c;

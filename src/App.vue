@@ -19,9 +19,6 @@
         <router-view />
       </div>
     </v-main>
-
-    <!-- 하단 푸터 -->
-    <app-footer v-if="!isLoginPage" />
   </v-app>
 </template>
 
@@ -30,7 +27,6 @@ import { ref, computed, provide } from "vue";
 import { useRoute } from "vue-router";
 import AppHeader from "./layouts/AppHeader.vue";
 import AppSidebar from "./layouts/AppSidebar.vue";
-import AppFooter from "./layouts/AppFooter.vue";
 
 const drawer = ref(true);
 const route = useRoute();
