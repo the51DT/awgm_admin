@@ -86,56 +86,56 @@ const menuItems = ref([
   { text: "Gut Morning Admin", subMenu: [], path: "/" },
   {
     text: "로그인",
-    subMenu: [{ text: "- 로그인", path: "/AppLogin" }],
+    subMenu: [{ text: "로그인", path: "/AppLogin" }],
   },
   {
     text: "메인 관리",
     subMenu: [
-      { text: "- 배너 관리", path: "/AppMenu3" },
-      { text: "- 팝업 관리", path: "/AppMenu2" },
-      { text: "- 것모닝 제품 링크 관리", path: "/AppMenu2" },
+      { text: "배너 관리", path: "/AppMenu3" },
+      { text: "팝업 관리", path: "/AppMenu2" },
+      { text: "것모닝 제품 링크 관리", path: "/AppMenu2" },
     ],
   },
   {
     text: "게시판 관리",
     subMenu: [
-      { text: "- 공지사항", path: "/AppMenu3" },
-      { text: "- FAQ", path: "/AppMenu2" },
-      { text: "- C/S 소통 게시판", path: "/AppMenu3" },
+      { text: "공지사항", path: "/AppMenu" },
+      { text: "FAQ", path: "/AppMenu2" },
+      { text: "C/S 소통 게시판", path: "/AppMenu3" },
     ],
   },
   {
     text: "회원 관리",
     subMenu: [
-      { text: "- 회원 목록", path: "/DataTables" },
-      { text: "- 휴먼회원 목록", path: "/AppMenu3" },
-      { text: "- 접속 로그", path: "/AppMenu3" },
+      { text: "회원 목록", path: "/DataTables" },
+      { text: "휴먼회원 목록", path: "/AppMenu3" },
+      { text: "접속 로그", path: "/AppMenu3" },
     ],
   },
   {
     text: "첼린지 관리",
     subMenu: [
-      { text: "- 첼린지", path: "/AppMenu3" },
-      { text: "- 보상 수상 대상자", path: "/AppMenu3" },
-      { text: "- 팀 목록", path: "/AppMenu3" },
+      { text: "첼린지", path: "/AppMenu3" },
+      { text: "보상 수상 대상자", path: "/AppMenu3" },
+      { text: "팀 목록", path: "/AppMenu3" },
     ],
   },
   {
     text: "미션 관리",
     subMenu: [
-      { text: "- 미션 인증 현황", path: "/AppMenu3" },
-      { text: "- 미션 인증 로그", path: "/AppMenu3" },
+      { text: "미션 인증 현황", path: "/AppMenu3" },
+      { text: "미션 인증 로그", path: "/AppMenu3" },
     ],
   },
   {
     text: "통계",
-    subMenu: [{ text: "- 통계", path: "/AppMenu3" }],
+    subMenu: [{ text: "통계", path: "/AppMenu3" }],
   },
   {
     text: "시스템 관리",
     subMenu: [
-      { text: "- 관리자 관리", path: "/AppMenu3" },
-      { text: "- 코드 관리", path: "/AppMenu3" },
+      { text: "관리자 관리", path: "/AppMenu3" },
+      { text: "코드 관리", path: "/AppMenu3" },
     ],
   },
 ]);
@@ -167,6 +167,9 @@ const isSelected = (item) => {
   /* Ensure menu list takes up available space and makes sidebar scrollable */
   .menu-list {
     overflow-y: auto; /* Enables scrolling if content overflows */
+  }
+  .menu-list::-webkit-scrollbar {
+    display: none;
   }
   .v-list {
     padding: 0;
@@ -227,6 +230,7 @@ const isSelected = (item) => {
         font-size: 14px;
         font-weight: 700;
         color: #c2c2c2;
+        margin-left: 14px;
       }
     }
   }

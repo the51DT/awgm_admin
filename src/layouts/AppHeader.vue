@@ -4,7 +4,6 @@
     <v-toolbar-title>Amway Gutmorning Admin</v-toolbar-title>
     <v-spacer />
     <user-menu />
-    <notifications-menu />
     <settings-button />
   </v-app-bar>
 </template>

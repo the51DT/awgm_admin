@@ -14,8 +14,10 @@
     </v-navigation-drawer>
 
     <!-- 메인 컨텐츠 -->
-    <v-main>
-      <router-view />
+    <v-main class="contents">
+      <div class="scroll-container">
+        <router-view />
+      </div>
     </v-main>
 
     <!-- 하단 푸터 -->
@@ -46,5 +48,26 @@ provide("layout", { drawer, toggleDrawer });
 </script>
 
 <style>
-/* 스타일 추가 필요시 여기에 작성 */
+/* 전체 레이아웃 */
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}
+
+.v-application {
+  height: 100%;
+}
+
+.v-main {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 64px);
+  overflow: hidden;
+}
+
+.scroll-container {
+  flex: 1;
+}
 </style>
