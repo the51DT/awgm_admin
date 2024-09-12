@@ -2,43 +2,39 @@
   <v-app>
     <v-main class="pa-10">
       <v-card class="custom" flat>
-        <admin-title title="배너 관리"></admin-title>
+        <v-card-title class="card-title">배너 관리</v-card-title>
 
-        <div class="input-container">
-          <v-select
-            v-model="selectedOption"
-            :items="options"
-            label=""
-            class="select"
-            variant="outlined"
-            hide-details
-          ></v-select>
-          <v-text-field
-            v-model="search"
-            label="검색"
-            prepend-inner-icon="mdi-magnify"
-            variant="outlined"
-            hide-details
-            single-line
-            class="search"
-          ></v-text-field>
-        </div>
-
-        <v-data-table
-          :headers="headers"
-          :items="filteredBanners"
-          :search="search"
-          hide-default-footer
-        >
-        </v-data-table>
+        <v-row class="input-row" align="center">
+          <v-col cols="7"></v-col>
+          <v-col cols="5" class="d-flex">
+            <v-text-field
+              :loading="loading"
+              density="compact"
+              label="제목을 입력해주세요."
+              variant="outlined"
+              hide-details
+              single-line
+              @click:append-inner="onClick"
+            ></v-text-field>
+            <v-btn class="ml-2 large" variant="outlined">검색</v-btn>
+          </v-col>
+        </v-row>
+        <v-card class="custom-table mt-10 mb-10">
+          <v-data-table
+            height=""
+            fixed-header
+            class="custom-table"
+            :headers="headers"
+            :items="filteredBanners"
+            :search="search"
+            hide-default-footer
+          >
+          </v-data-table
+        ></v-card>
 
         <v-row class="footer-row">
           <!-- Save button on the left -->
-          <v-col class="d-flex justify-start">
-            <v-btn color="primary" @click="save" class="action-btn">
-              저장
-            </v-btn>
-          </v-col>
+          <v-col class="d-flex justify-start"> </v-col>
 
           <!-- Pagination in the center -->
           <v-col class="d-flex justify-center">
@@ -53,9 +49,7 @@
 
           <!-- Register button on the right -->
           <v-col class="d-flex justify-end">
-            <v-btn color="primary" @click="register" class="action-btn">
-              등록
-            </v-btn>
+            <v-btn class="ml-2 large" variant="outlined"> 등록 </v-btn>
           </v-col>
         </v-row>
       </v-card>
@@ -64,12 +58,7 @@
 </template>
 
 <script>
-import AdminTitle from "@/components/AdminTitle.vue";
-
 export default {
-  components: {
-    AdminTitle,
-  },
   data() {
     return {
       search: "",
@@ -169,6 +158,46 @@ export default {
           write: "고주영",
           ymdt: "2024-12-01 07:59",
         },
+        {
+          name: "11",
+          bannertype: 518,
+          bannername: 26.0,
+          bannerstate: "노출",
+          write: "고주영",
+          ymdt: "2024-12-01 07:59",
+        },
+        {
+          name: "12",
+          bannertype: 518,
+          bannername: 26.0,
+          bannerstate: "노출",
+          write: "고주영",
+          ymdt: "2024-12-01 07:59",
+        },
+        {
+          name: "13",
+          bannertype: 518,
+          bannername: 26.0,
+          bannerstate: "노출",
+          write: "고주영",
+          ymdt: "2024-12-01 07:59",
+        },
+        {
+          name: "14",
+          bannertype: 518,
+          bannername: 26.0,
+          bannerstate: "노출",
+          write: "고주영",
+          ymdt: "2024-12-01 07:59",
+        },
+        {
+          name: "15",
+          bannertype: 518,
+          bannername: 26.0,
+          bannerstate: "노출",
+          write: "고주영",
+          ymdt: "2024-12-01 07:59",
+        },
       ],
       page: 1,
       totalPages: 10, // Ensure this value is correct
@@ -192,22 +221,19 @@ export default {
 };
 </script>
 
-<style scoped>
-.input-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-}
+<style lang="scss" scoped>
+.v-text-field {
+  height: 33px;
 
-.select {
-  flex: 0 1 auto;
-  margin-right: 8px;
-}
+  .v-input__control {
+    height: inherit;
 
-.search {
-  flex: 1;
+    .v-input__slot {
+      height: inherit;
+      min-height: initial;
+    }
+  }
 }
-
 .card-title {
   font-size: 26px;
   padding-left: 0;
@@ -216,22 +242,30 @@ export default {
   margin-bottom: 30px;
   display: flex;
   align-items: center;
+  font-weight: 700;
 }
-.footer-row {
-  margin-top: 16px;
+.custom {
+  .v-btn {
+    height: 39px;
+    border-color: #3e3e3e;
+  }
 }
+.custom-table {
+  max-height: calc(100vh - 500px);
 
-.footer-row .v-col {
-  display: flex;
-  align-items: center;
-}
-
-.pagination {
-  margin: 0 auto;
-}
-
-.action-btn {
-  background-color: #1976d2; /* Primary color for button */
-  color: white;
+  .v-table {
+    border-top: 3px solid #00498c;
+    box-shadow: 0;
+    border-radius: 0;
+    opacity: 1;
+    line-height: 10px !important;
+    th {
+      font-size: 14px !important;
+      font-weight: 700;
+    }
+    td {
+      font-size: 13px !important;
+    }
+  }
 }
 </style>

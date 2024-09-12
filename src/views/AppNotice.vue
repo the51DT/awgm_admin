@@ -186,7 +186,7 @@ export default {
           ymdt: "2024-12-01 07:59",
         },
         {
-          name: "10",
+          name: "14",
           bannertype: 518,
           bannername: 26.0,
           bannerstate: "노출",
@@ -194,7 +194,7 @@ export default {
           ymdt: "2024-12-01 07:59",
         },
         {
-          name: "14",
+          name: "15",
           bannertype: 518,
           bannername: 26.0,
           bannerstate: "노출",
