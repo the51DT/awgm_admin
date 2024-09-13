@@ -1,64 +1,35 @@
 <template>
   <div class="lnb_admin" :class="{ on: drawer }">
     <v-list dense class="menu-list">
-      <!-- Dashboard Title -->
-      <v-list-item
-        class="subTitle"
-        :class="{ select: isSelected(menuItems[0]) }"
-        @click="handleClick(menuItems[0])"
-      >
-        <v-list-item-content>
-          <v-list-item-title class="btn_menu">
-            {{ menuItems[0].text }}
-          </v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-
       <!-- Main menu items -->
-      <template v-for="(item, index) in menuItems.slice(1)" :key="index">
-        <!-- Render top-level menu items (without sub-menu) -->
-        <template v-if="!item.subMenu">
+      <template v-for="(item, index) in menuItems" :key="index">
+        <!-- Render menu items (with or without sub-menu) -->
+        <v-list-item
+          :class="['list_1dep', { select: isSelected(item) }]"
+          @click="handleClick(item)"
+        >
+          <v-list-item-content>
+            <v-list-item-title class="btn_menu">
+              {{ item.text }}
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <!-- Submenu items -->
+        <v-list dense class="menu_2dep" v-if="item.subMenu">
           <v-list-item
-            :class="['list_1dep', { select: isSelected(item) }]"
-            @click="handleClick(item)"
+            v-for="(subItem, subIndex) in item.subMenu"
+            :key="subIndex"
+            :class="['list_2dep', { select: isSelected(subItem) }]"
+            @click="handleClick(subItem)"
           >
             <v-list-item-content>
               <v-list-item-title class="btn_menu">
-                {{ item.text }}
+                {{ subItem.text }}
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-        </template>
-
-        <!-- Render top-level menu items (with sub-menu) -->
-        <template v-if="item.subMenu">
-          <v-list-item
-            :class="['list_1dep', { select: isSelected(item) }]"
-            @click="handleClick(item)"
-          >
-            <v-list-item-content>
-              <v-list-item-title class="btn_menu">
-                {{ item.text }}
-              </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-
-          <!-- Submenu items -->
-          <v-list dense class="menu_2dep">
-            <v-list-item
-              v-for="(subItem, subIndex) in item.subMenu"
-              :key="subIndex"
-              :class="['list_2dep', { select: isSelected(subItem) }]"
-              @click="handleClick(subItem)"
-            >
-              <v-list-item-content>
-                <v-list-item-title class="btn_menu">
-                  {{ subItem.text }}
-                </v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list>
-        </template>
+        </v-list>
       </template>
     </v-list>
 
@@ -77,13 +48,10 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
-// eslint-disable-next-line no-unused-vars
 const drawer = ref(false);
 const router = useRouter();
 
-// eslint-disable-next-line no-unused-vars
 const menuItems = ref([
-  { text: "Gut Morning Admin", subMenu: [], path: "/" },
   {
     text: "로그인",
     subMenu: [{ text: "로그인", path: "/AppLogin" }],
@@ -140,15 +108,14 @@ const menuItems = ref([
   },
 ]);
 
-// eslint-disable-next-line no-unused-vars
 const handleClick = (item) => {
   if (item.path) {
     router.push(item.path);
   }
 };
 
-// eslint-disable-next-line no-unused-vars
 const isSelected = (item) => {
+  // This function should be implemented based on your needs to highlight the selected item
   return false;
 };
 </script>

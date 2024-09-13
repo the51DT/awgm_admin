@@ -26,6 +26,7 @@
             class="custom-table"
             :headers="headers"
             :items="filteredBanners"
+            :items-per-page="5"
             :search="search"
             show-select
             hide-default-footer
@@ -223,52 +224,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.v-text-field {
-  height: 33px;
-
-  .v-input__control {
-    height: inherit;
-
-    .v-input__slot {
-      height: inherit;
-      min-height: initial;
-    }
-  }
-}
-.card-title {
-  font-size: 26px;
-  padding-left: 0;
-  border-bottom: 2px solid #e0e0e0;
-  padding-bottom: 8px;
-  margin-bottom: 30px;
-  display: flex;
-  align-items: center;
-  font-weight: 700;
-}
-.custom {
-  .v-btn {
-    height: 39px;
-    border-color: #3e3e3e;
-  }
-}
-.custom-table {
-  max-height: calc(100vh - 400px);
-
-  .v-table {
-    border-top: 3px solid #00498c;
-    box-shadow: 0;
-    border-radius: 0;
-    opacity: 1;
-    line-height: 10px !important;
-    th {
-      font-size: 14px !important;
-      font-weight: 700;
-    }
-    td {
-      font-size: 13px !important;
-    }
-  }
-}
-</style>

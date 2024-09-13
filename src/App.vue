@@ -43,7 +43,7 @@ const toggleDrawer = () => {
 provide("layout", { drawer, toggleDrawer });
 </script>
 
-<style>
+<style lang="scss">
 /* 전체 레이아웃 */
 html,
 body,
