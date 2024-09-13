@@ -16,7 +16,7 @@
               single-line
               @click:append-inner="onClick"
             ></v-text-field>
-            <v-btn class="ml-2 large" variant="outlined">검색</v-btn>
+            <v-btn class="ml-2 large" variant="flat">검색</v-btn>
           </v-col>
         </v-row>
         <v-card class="custom-table mt-10 mb-10">
@@ -49,7 +49,9 @@
 
           <!-- Register button on the right -->
           <v-col class="d-flex justify-end">
-            <v-btn class="ml-2 large" variant="outlined"> 등록 </v-btn>
+            <v-btn class="ml-2 large" variant="flat" @click="AppBanner02">
+              등록
+            </v-btn>
           </v-col>
         </v-row>
       </v-card>
@@ -59,6 +61,11 @@
 
 <script>
 export default {
+  methods: {
+    AppBanner02() {
+      this.$router.push({ name: "AppBanner02" });
+    },
+  },
   data() {
     return {
       search: "",

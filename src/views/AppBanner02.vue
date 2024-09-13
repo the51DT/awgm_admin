@@ -8,7 +8,7 @@
           <v-col cols="2">
             <span class="pl-2">노출여부</span>
           </v-col>
-          <v-col cols="6" class="d-flex">
+          <v-col cols="10" class="d-flex">
             <v-radio-group inline hide-details>
               <v-radio label="노출" value="exposed"></v-radio>
               <v-radio label="미노출" value="notExposed" class="ml-4"></v-radio>
@@ -20,7 +20,7 @@
           <v-col cols="2">
             <span class="pl-2">노출기간</span>
           </v-col>
-          <v-col cols="6" class="d-flex">
+          <v-col cols="10" class="d-flex">
             <v-date-input
               :loading="loading"
               density="compact"
@@ -49,7 +49,7 @@
           <v-col cols="2">
             <span class="pl-2">배너명</span>
           </v-col>
-          <v-col cols="6" class="d-flex">
+          <v-col cols="10" class="d-flex">
             <v-text-field
               :loading="loading"
               density="compact"
@@ -66,7 +66,7 @@
           <v-col cols="2">
             <span class="pl-2">배너링크</span>
           </v-col>
-          <v-col cols="6" class="d-flex">
+          <v-col cols="10" class="d-flex">
             <v-text-field
               :loading="loading"
               density="compact"
@@ -83,7 +83,7 @@
           <v-col cols="2">
             <span class="pl-2">배너 내용</span>
           </v-col>
-          <v-col cols="6" class="d-flex">
+          <v-col cols="10" class="d-flex">
             <v-text-field
               :loading="loading"
               density="compact"
@@ -100,7 +100,7 @@
           <v-col cols="2">
             <span class="pl-2">배너 이미지</span>
           </v-col>
-          <v-col cols="6" class="d-flex">
+          <v-col cols="10" class="d-flex">
             <v-file-input
               :loading="loading"
               density="compact"
@@ -112,28 +112,26 @@
               prepend-icon=""
               ref="file"
             ></v-file-input>
-            <v-btn class="ml-2 large" variant="flat" 
-              @click="$refs.file.click()"
-            >파일첨부</v-btn>
+            <v-btn class="ml-2 large" variant="flat" @click="$refs.file.click()"
+              >파일첨부</v-btn
+            >
           </v-col>
         </v-row>
 
         <v-row class="footer-row">
           <!-- Save button on the left -->
-          <v-col class="d-flex justify-start">
+          <v-col cols="2" class="d-flex justify-start">
             <v-btn class="ml-2 large" variant="flat">초기화</v-btn>
           </v-col>
 
           <!-- Pagination in the center -->
-          <v-col class="d-flex justify-center">
+          <v-col cols="10" class="d-flex justify-end">
             <v-btn class="large" variant="outlined">목록</v-btn>
             <v-btn class="ml-2 large" variant="flat">저장</v-btn>
           </v-col>
 
           <!-- Register button on the right -->
-          <v-col class="d-flex justify-end">
-            
-          </v-col>
+          <v-col class="d-flex justify-end"> </v-col>
         </v-row>
       </v-card>
     </v-main>
@@ -141,46 +139,7 @@
 </template>
 
 <script>
-
+export default {
+  name: "AppBanner02",
+};
 </script>
-
-<style lang="scss" scoped>
-.v-text-field {
-  height: 33px;
-
-  .v-input__control {
-    height: inherit;
-
-    .v-input__slot {
-      height: inherit;
-      min-height: initial;
-    }
-  }
-}
-.date-sub {
-  display: flex;
-  align-items: center;
-}
-.card-title {
-  font-size: 26px;
-  padding-left: 0;
-  border-bottom: 2px solid #e0e0e0;
-  padding-bottom: 8px;
-  margin-bottom: 30px;
-  display: flex;
-  align-items: center;
-  font-weight: 700;
-}
-.custom {
-  position: relative;
-  .v-btn {
-    height: 39px;
-    border-color: #3e3e3e;
-
-    &.v-btn--variant-flat {
-      background: #3f4d66;
-      color: #FFF;
-    }
-  }
-}
-</style>

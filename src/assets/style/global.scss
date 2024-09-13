@@ -25,6 +25,10 @@
     .v-btn {
       height: 39px;
       border-color: #3e3e3e;
+      &.v-btn--variant-flat {
+        background: #3f4d66;
+        color: #fff;
+      }
     }
   }
   .custom-table {
