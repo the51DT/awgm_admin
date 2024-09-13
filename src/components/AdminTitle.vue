@@ -16,15 +16,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.card-title {
-  font-size: 26px;
-  padding-left: 0;
-  border-bottom: 2px solid #e0e0e0;
-  padding-bottom: 8px;
-  margin-bottom: 30px;
-  display: flex;
-  align-items: center;
-}
-</style>
