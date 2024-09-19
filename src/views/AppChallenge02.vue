@@ -61,7 +61,7 @@
           </v-col>
           <v-col cols="2" class="d-flex justify-end">
             <v-btn class="large" variant="flat">+추가</v-btn>
-            <v-btn class="ml-2 large" variant="flat" color="#ff0000">-삭제</v-btn>
+            <v-btn class="ml-2 large" variant="flat" color="red">-삭제</v-btn>
           </v-col>
         </v-row>
 
