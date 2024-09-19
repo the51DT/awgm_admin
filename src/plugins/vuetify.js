@@ -14,4 +14,10 @@ export default createVuetify({
       mdi,
     },
   },
+  defaults: {
+    VBtn: {
+      color: "#3f4d66",
+      variant: "flat",
+    },
+  },
 });

@@ -9,7 +9,7 @@
             <span class="pl-2">노출여부</span>
           </v-col>
           <v-col cols="10" class="d-flex">
-            <v-radio-group inline hide-details>
+            <v-radio-group v-model="exposure" inline hide-details>
               <v-radio label="노출" value="exposed"></v-radio>
               <v-radio label="미노출" value="notExposed" class="ml-4"></v-radio>
             </v-radio-group>
@@ -129,9 +129,6 @@
             <v-btn class="large" variant="outlined">목록</v-btn>
             <v-btn class="ml-2 large" variant="flat">저장</v-btn>
           </v-col>
-
-          <!-- Register button on the right -->
-          <v-col class="d-flex justify-end"> </v-col>
         </v-row>
       </v-card>
     </v-main>
@@ -141,5 +138,10 @@
 <script>
 export default {
   name: "AppBanner02",
+  data () {
+    return {
+      exposure: "exposed",
+    }
+  },
 };
 </script>
