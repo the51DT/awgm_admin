@@ -3,13 +3,12 @@
     <v-list dense class="menu-list">
       <template v-for="(item, index) in menuRoutes" :key="index">
         <v-list-item
-          :class="['list_1dep', { select: isSelected(item) }]"
+          :class="['list_1dep', { select: isSelected(item), completed: item.isCompleted }]"
           @click="handleClick(item)"
         >
           <v-list-item-content>
             <v-list-item-title class="btn_menu">
               {{ item.text }}
-              <!-- 수정된 부분 -->
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
@@ -18,7 +17,7 @@
           <v-list-item
             v-for="(subItem, subIndex) in item.subMenu"
             :key="subIndex"
-            :class="['list_2dep', { select: isSelected(subItem) }]"
+            :class="['list_2dep', { select: isSelected(subItem), completed: subItem.isCompleted }]"
             @click="handleClick(subItem)"
           >
             <v-list-item-content>
@@ -31,10 +30,10 @@
       </template>
     </v-list>
     <div class="sidebar-buttons">
-      <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+      <a href="#" target="_blank" rel="noopener noreferrer">
         <v-btn class="sidebar-btn" color="white">GUT Morning 바로가기</v-btn>
       </a>
-      <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+      <a href="#" target="_blank" rel="noopener noreferrer">
         <v-btn class="sidebar-btn" color="white">GUT M. Korea 바로가기</v-btn>
       </a>
     </div>
@@ -44,7 +43,7 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import { menuRoutes } from "@/router/menu"; // 메뉴 데이터 가져오기
+import { menuRoutes } from "@/router/menu";
 
 const drawer = ref(false);
 const router = useRouter();
@@ -57,8 +56,13 @@ const handleClick = (item) => {
 
 // eslint-disable-next-line no-unused-vars
 const isSelected = (item) => {
-  return false; // 필요 시 구현
+  return false;
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.completed { /* 페이지 완료 여부용 */
+  background-color: #000; 
+  font-weight: bold; 
+}
+</style>

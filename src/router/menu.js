@@ -4,17 +4,17 @@ export const menuRoutes = [
     path: "/로그인-GutAd00001",
     component: () => import("@/views/GutAd00001.vue"),
     meta: { layout: "none" },
-    subMenu: [{ text: "로그인-GutAd00001", path: "/로그인-GutAd00001" }],
+    subMenu: [{ text: "로그인-GutAd00001", path: "/로그인-GutAd00001", isCompleted: true }],
   },
   {
     text: "메인",
-    subMenu: [{ text: "(-)dashboard-GutAd00002", path: "/로그인-GutAd00002" }],
+    subMenu: [{ text: "dashboard-GutAd00002", path: "/dashboard-GutAd00002" }],
   },
   {
     text: "메인 관리",
     subMenu: [
-      { text: "배너 관리-GutAd00003", path: "/배너 관리-GutAd00003" },
-      { text: "배너 관리>등록-GutAd00004", path: "/배너 관리>등록-GutAd00004" },
+      { text: "배너 관리-GutAd00003", path: "/배너 관리-GutAd00003", isCompleted: true },
+      { text: "배너 관리>등록-GutAd00004", path: "/배너 관리>등록-GutAd00004", isCompleted: true },
       {
         text: "배너 관리>상세/수정-GutAd00005",
         path: "/배너 관리>상세/수정-GutAd00005",
@@ -42,7 +42,7 @@ export const menuRoutes = [
   {
     text: "게시판 관리",
     subMenu: [
-      { text: "공지사항-GutAd00012", path: "/공지사항-GutAd00012" },
+      { text: "공지사항-GutAd00012", path: "/공지사항-GutAd00012", isCompleted: true },
       { text: "공지사항>등록-GutAd00013", path: "/공지사항>등록-GutAd00013" },
       {
         text: "공지사항>상세/수정-GutAd00014",
@@ -59,6 +59,7 @@ export const menuRoutes = [
       {
         text: "C/S소통게시판>상세/수정-GutAd00020",
         path: "/C/S소통게시판>상세/수정-GutAd00020",
+        isCompleted: true
       },
     ],
   },
@@ -79,7 +80,7 @@ export const menuRoutes = [
     text: "첼린지 관리",
     subMenu: [
       { text: "첼린지-GutAd00026", path: "/첼린지-GutAd00026" },
-      { text: "첼린지>등록-GutAd00027", path: "/첼린지>등록-GutAd00027" },
+      { text: "첼린지>등록-GutAd00027", path: "/첼린지>등록-GutAd00027", isCompleted: true },
       {
         text: "첼린지>상세/수정-GutAd00028",
         path: "/첼린지>상세/수정-GutAd00028",
@@ -121,7 +122,7 @@ export const menuRoutes = [
         path: "/관리자 관리상세/수정-GutAd00052",
       },
       { text: "권한 관리-GutAd00053", path: "/권한 관리-GutAd00053" },
-      { text: "권한 관리>등록-GutAd00054", path: "/권한 관리>등록-GutAd00054" },
+      { text: "권한 관리>등록-GutAd00054", path: "/권한 관리>등록-GutAd00054", isCompleted: true },
       {
         text: "권한 관리>상세/수정-GutAd00055",
         path: "/권한 관리상세/수정-GutAd00055",

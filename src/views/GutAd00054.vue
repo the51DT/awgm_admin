@@ -3,7 +3,7 @@
     <v-main class="pa-10">
       <v-card class="custom" flat>
         <v-card-title class="card-title">권한 관리 등록</v-card-title>
-        <div class="inner-content">
+        <div class="scroll-area">
           <v-row class="input-row" align="center">
             <v-col cols="2">
               <span>권한명</span>
