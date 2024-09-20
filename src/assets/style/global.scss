@@ -13,8 +13,6 @@ body,
 .v-main {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 64px);
-  overflow: hidden;
 }
 
 .scroll-container {
@@ -41,6 +39,10 @@ body,
     padding: 0;
     .v-list-item {
       min-height: 40px;
+      white-space: normal;
+    }
+    .v-list-item-title {
+      white-space: normal;
     }
     .v-list-item.list_1dep {
       min-height: 50px;
@@ -170,9 +172,6 @@ body,
     }
   }
   .footer-row {
-    position: sticky;
-    bottom: 30px;
-    margin-top: 60px;
     background: #fff;
     z-index: 10;
     .pagination {
