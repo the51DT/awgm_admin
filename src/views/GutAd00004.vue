@@ -6,7 +6,7 @@
 
         <v-row class="input-row" align="center">
           <v-col cols="2">
-            <span class="pl-2">노출여부</span>
+            <span>노출여부</span>
           </v-col>
           <v-col cols="10" class="d-flex">
             <v-radio-group v-model="exposure" inline hide-details>
@@ -18,7 +18,7 @@
 
         <v-row class="input-row" align="center">
           <v-col cols="2">
-            <span class="pl-2">노출기간</span>
+            <span>노출기간</span>
           </v-col>
           <v-col cols="10" class="d-flex">
             <v-date-input
@@ -47,7 +47,7 @@
 
         <v-row class="input-row" align="center">
           <v-col cols="2">
-            <span class="pl-2">배너명</span>
+            <span>배너명</span>
           </v-col>
           <v-col cols="10" class="d-flex">
             <v-text-field
@@ -64,7 +64,7 @@
 
         <v-row class="input-row" align="center">
           <v-col cols="2">
-            <span class="pl-2">배너링크</span>
+            <span>배너링크</span>
           </v-col>
           <v-col cols="10" class="d-flex">
             <v-text-field
@@ -81,7 +81,7 @@
 
         <v-row class="input-row" align="center">
           <v-col cols="2">
-            <span class="pl-2">배너 내용</span>
+            <span>배너 내용</span>
           </v-col>
           <v-col cols="10" class="d-flex">
             <v-text-field
@@ -98,7 +98,7 @@
 
         <v-row class="input-row" align="center">
           <v-col cols="2">
-            <span class="pl-2">배너 이미지</span>
+            <span>배너 이미지</span>
           </v-col>
           <v-col cols="10" class="d-flex">
             <v-file-input
@@ -137,7 +137,7 @@
 
 <script>
 export default {
-  name: "AppBanner02",
+  name: "GutAd00004",
   data() {
     return {
       exposure: "exposed",
