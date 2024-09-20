@@ -77,7 +77,7 @@
             </v-col>
           </v-row>
 
-          <v-sheet class="mt-4 pa-4" border="sm" rounded="lg">
+          <v-sheet class="mt-4 pa-8" border="sm" rounded="lg">
             <v-row class="input-row" align="center">
               <v-col cols="2">
                 <span>챌린지 명</span>
@@ -205,7 +205,7 @@
             </v-row>
           </v-sheet>
 
-          <v-sheet class="mt-4 pa-4" border="sm" rounded="lg">
+          <v-sheet class="mt-4 pa-8" border="sm" rounded="lg">
             <v-row class="input-row" align="center">
               <v-col cols="2">
                 <span>챌린지 명</span>
