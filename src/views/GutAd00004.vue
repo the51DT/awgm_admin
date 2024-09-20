@@ -121,7 +121,7 @@
         <v-row class="footer-row">
           <!-- Save button on the left -->
           <v-col cols="2" class="d-flex justify-start">
-            <v-btn class="ml-2 large" variant="flat">초기화</v-btn>
+            <v-btn class="large" variant="flat">초기화</v-btn>
           </v-col>
 
           <!-- Pagination in the center -->

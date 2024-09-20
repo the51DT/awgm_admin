@@ -6,7 +6,7 @@
         <div class="inner-content">
           <v-row class="input-row" align="center">
             <v-col cols="2">
-              <span class="pl-2">권한명</span>
+              <span>권한명</span>
             </v-col>
             <v-col cols="10" class="d-flex">
               <v-text-field
@@ -22,7 +22,7 @@
           </v-row>
           <v-row class="input-row" align="center">
             <v-col cols="2">
-              <span class="pl-2">사용여부</span>
+              <span>사용여부</span>
             </v-col>
             <v-col cols="10" class="d-flex">
               <v-radio-group inline hide-details>
@@ -37,7 +37,7 @@
           </v-row>
           <v-row class="input-row" align="center">
             <v-col cols="2">
-              <span class="pl-2">권한</span>
+              <span>권한</span>
             </v-col>
             <v-col cols="2">
               <v-checkbox inlin hide-details label="전체 선택"></v-checkbox>
@@ -48,7 +48,7 @@
           </v-row>
           <v-row class="input-row" align="center">
             <v-col cols="2">
-              <span class="pl-2"></span>
+              <span></span>
             </v-col>
             <v-col cols="2" class="border pl-6 d-flex">
               <span>메인 관리</span>
@@ -59,7 +59,7 @@
           </v-row>
           <v-row class="input-row" align="center">
             <v-col cols="2">
-              <span class="pl-2"></span>
+              <span></span>
             </v-col>
             <v-col cols="2" class="pl-6 d-flex">
               <span>- 배너 관리</span>
@@ -74,7 +74,7 @@
           </v-row>
           <v-row class="input-row" align="center">
             <v-col cols="2">
-              <span class="pl-2"></span>
+              <span></span>
             </v-col>
             <v-col cols="2" class="pl-6 d-flex">
               <span>- 팝업 관리</span>
@@ -89,7 +89,7 @@
           </v-row>
           <v-row class="input-row" align="center">
             <v-col cols="2">
-              <span class="pl-2"></span>
+              <span></span>
             </v-col>
             <v-col cols="2" class="pl-6 d-flex">
               <span>- 것모닝 제품링크 관리</span>
@@ -104,7 +104,7 @@
           </v-row>
           <v-row class="input-row" align="center">
             <v-col cols="2">
-              <span class="pl-2"></span>
+              <span></span>
             </v-col>
             <v-col cols="2" class="border pl-6 d-flex">
               <span>게시판 관리</span>
@@ -115,7 +115,7 @@
           </v-row>
           <v-row class="input-row" align="center">
             <v-col cols="2">
-              <span class="pl-2"></span>
+              <span></span>
             </v-col>
             <v-col cols="2" class="pl-6 d-flex">
               <span>- 공지사항</span>
@@ -130,7 +130,7 @@
           </v-row>
           <v-row class="input-row" align="center">
             <v-col cols="2">
-              <span class="pl-2"></span>
+              <span></span>
             </v-col>
             <v-col cols="2" class="pl-6 d-flex">
               <span>- FAQ</span>
@@ -145,7 +145,7 @@
           </v-row>
           <v-row class="input-row" align="center">
             <v-col cols="2">
-              <span class="pl-2"></span>
+              <span></span>
             </v-col>
             <v-col cols="2" class="pl-6 d-flex">
               <span>- C/S 소통 게시판</span>
@@ -160,7 +160,7 @@
           </v-row>
           <v-row class="input-row" align="center">
             <v-col cols="2">
-              <span class="pl-2"></span>
+              <span></span>
             </v-col>
             <v-col cols="2" class="border pl-6 d-flex">
               <span>회원 관리</span>
@@ -171,7 +171,7 @@
           </v-row>
           <v-row class="input-row" align="center">
             <v-col cols="2">
-              <span class="pl-2"></span>
+              <span></span>
             </v-col>
             <v-col cols="2" class="pl-6 d-flex">
               <span>- 회원 목록</span>
@@ -186,7 +186,7 @@
           </v-row>
           <v-row class="input-row" align="center">
             <v-col cols="2">
-              <span class="pl-2"></span>
+              <span></span>
             </v-col>
             <v-col cols="2" class="pl-6 d-flex">
               <span>- 휴먼회원 목록</span>
@@ -201,7 +201,7 @@
           </v-row>
           <v-row class="input-row" align="center">
             <v-col cols="2">
-              <span class="pl-2"></span>
+              <span></span>
             </v-col>
             <v-col cols="2" class="pl-6 d-flex">
               <span>- 접속 로그</span>
@@ -237,6 +237,6 @@
 
 <script>
 export default {
-  name: "AppEdit",
+  name: "GutAd00054",
 };
 </script>

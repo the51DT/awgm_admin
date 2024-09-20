@@ -2,8 +2,7 @@
   <v-app>
     <v-main class="pa-10">
       <v-card class="custom" flat>
-        <v-card-title class="card-title">배너 관리</v-card-title>
-
+        <v-card-title class="card-title">공지사항</v-card-title>
         <v-row class="input-row" align="center">
           <v-col cols="7"></v-col>
           <v-col cols="5" class="d-flex">
@@ -26,16 +25,18 @@
             class="custom-table"
             :headers="headers"
             :items="filteredBanners"
+            :items-per-page="5"
             :search="search"
+            show-select
             hide-default-footer
           >
           </v-data-table
         ></v-card>
-
         <v-row class="footer-row">
           <!-- Save button on the left -->
-          <v-col class="d-flex justify-start"> </v-col>
-
+          <v-col class="d-flex justify-start">
+            <v-btn class="ml-2 large" variant="flat"> 상위노출 저장 </v-btn>
+          </v-col>
           <!-- Pagination in the center -->
           <v-col class="d-flex justify-center">
             <v-pagination
@@ -46,12 +47,9 @@
               color="primary"
             ></v-pagination>
           </v-col>
-
           <!-- Register button on the right -->
           <v-col class="d-flex justify-end">
-            <v-btn class="ml-2 large" variant="flat">
-              등록
-            </v-btn>
+            <v-btn class="ml-2 large" variant="flat"> 등록 </v-btn>
           </v-col>
         </v-row>
       </v-card>
@@ -61,7 +59,6 @@
 
 <script>
 export default {
-  name: "GutAd00004",
   data() {
     return {
       search: "",
