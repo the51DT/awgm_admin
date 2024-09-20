@@ -25,8 +25,8 @@
 <script setup>
 import { ref, computed, provide } from "vue";
 import { useRoute } from "vue-router";
-import AppHeader from "./layouts/AppHeader.vue";
-import AppSidebar from "./layouts/AppSidebar.vue";
+import AppHeader from "@/layouts/AppHeader.vue";
+import AppSidebar from "@/layouts/AppSidebar.vue";
 
 const drawer = ref(true);
 const route = useRoute();
@@ -43,27 +43,4 @@ const toggleDrawer = () => {
 provide("layout", { drawer, toggleDrawer });
 </script>
 
-<style lang="scss">
-/* 전체 레이아웃 */
-html,
-body,
-#app {
-  height: 100%;
-  margin: 0;
-}
-
-.v-application {
-  height: 100%;
-}
-
-.v-main {
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 64px);
-  overflow: hidden;
-}
-
-.scroll-container {
-  flex: 1;
-}
-</style>
+<style lang="scss"></style>
