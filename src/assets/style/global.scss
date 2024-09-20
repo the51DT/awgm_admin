@@ -265,4 +265,10 @@ body,
       }
     }
   }
+
+  .scroll-area {
+    height: calc(100vh - 204px);
+    overflow: auto;
+    padding-bottom: 63px;
+  }
 }

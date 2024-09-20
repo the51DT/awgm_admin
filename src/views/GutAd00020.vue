@@ -6,7 +6,7 @@
 
         <v-row class="input-row" align="center">
           <v-col cols="2">
-            <span class="pl-2">제목</span>
+            <span>제목</span>
           </v-col>
           <v-col cols="10" class="d-flex">
             <span>소통합시다</span>
@@ -15,7 +15,7 @@
 
         <v-row class="input-row">
           <v-col cols="2">
-            <span class="pl-2">내용</span>
+            <span>내용</span>
           </v-col>
           <v-col cols="10" class="d-flex">
             <span>
@@ -28,7 +28,7 @@
 
         <v-row class="input-row">
           <v-col cols="2">
-            <span class="pl-2">댓글</span>
+            <span>댓글</span>
           </v-col>
           <v-col cols="10" class="d-flex flex-column ga-4">
             <div class="d-flex align-center justify-space-between w-100">
@@ -68,7 +68,7 @@
 
         <v-row class="input-row">
           <v-col cols="2">
-            <span class="pl-2">댓글 달기</span>
+            <span>댓글 달기</span>
           </v-col>
           <v-col cols="10" class="d-flex">
             <v-textarea
@@ -96,12 +96,6 @@
 
 <script>
 export default {
-  name: "AppChallenge02",
-  data () {
-    return {
-      successCondition: "certification",
-      amends: "voucher",
-    }
-  },
+  name: "GutAd00020",
 };
 </script>

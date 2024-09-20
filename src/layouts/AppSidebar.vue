@@ -54,7 +54,7 @@ const router = useRouter();
 const menuItems = ref([
   {
     text: "로그인",
-    subMenu: [{ text: "로그인", path: "/AppLogin" }],
+    subMenu: [{ text: "로그인", path: "/로그인-GutAd00001" }],
   },
   {
     text: "메인 관리",
