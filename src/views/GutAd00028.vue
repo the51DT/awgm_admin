@@ -333,7 +333,7 @@
 
 <script>
 export default {
-  name: "GutAd00027",
+  name: "GutAd00028",
   data () {
     return {
       successCondition: "certification",

@@ -2,14 +2,37 @@
   <v-app>
     <v-main class="pa-10">
       <v-card class="custom" flat>
-        <v-card-title class="card-title">회원정보</v-card-title>
+        <v-card-title class="card-title">회원</v-card-title>
         <v-row class="input-row" align="center">
-          <v-col cols="7"></v-col>
-          <v-col cols="5" class="d-flex">
+          <v-col cols="3">
+          </v-col>
+          <v-col class="d-flex justify-end pr-2" cols="2">
+            <v-select 
+            label="회원"
+            :items="['회원', '탈퇴', '강제탈퇴']"
+            variant="outlined"
+            inline 
+            hide-details
+            single-line
+            density="compact"
+          ></v-select>
+          </v-col>
+          <v-col class="d-flex justify-end pr-2" cols="2">
+            <v-select 
+            label="이름"
+            :items="['이름', '연락처', '아이디']"
+            variant="outlined"
+            inline 
+            hide-details 
+            single-line
+            density="compact"
+          ></v-select>
+          </v-col>
+          <v-col cols="5" class="pl-0 d-flex">
             <v-text-field
               :loading="loading"
               density="compact"
-              label="제목을 입력해주세요."
+              label="검색어를 입력해주세요."
               variant="outlined"
               hide-details
               single-line
@@ -25,13 +48,10 @@
             class="custom-table"
             :headers="headers"
             :items="filteredBanners"
-            :items-per-page="5"
             :search="search"
-            show-select
             hide-default-footer
           >
-          </v-data-table
-        ></v-card>
+          </v-data-table></v-card>
         <v-row class="footer-row">
           <!-- Save button on the left -->
           <v-col class="d-flex justify-start">
@@ -49,7 +69,7 @@
           </v-col>
           <!-- Register button on the right -->
           <v-col class="d-flex justify-end">
-            <v-btn class="ml-2 large" variant="flat"> 등록 </v-btn>
+
           </v-col>
         </v-row>
       </v-card>
@@ -59,6 +79,7 @@
 
 <script>
 export default {
+  name: "GutAd00021",
   data() {
     return {
       search: "",

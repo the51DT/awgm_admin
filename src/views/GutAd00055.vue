@@ -2,7 +2,7 @@
   <v-app>
     <v-main class="pa-10">
       <v-card class="custom" flat>
-        <v-card-title class="card-title">권한 관리 등록</v-card-title>
+        <v-card-title class="card-title">권한 관리</v-card-title>
         <div class="scroll-area">
           <v-row class="input-row" align="center">
             <v-col cols="2">
@@ -237,6 +237,6 @@
 
 <script>
 export default {
-  name: "GutAd00054",
+  name: "GutAd00055",
 };
 </script>

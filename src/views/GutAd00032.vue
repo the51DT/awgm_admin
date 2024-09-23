@@ -58,9 +58,7 @@
 
           <!-- Register button on the right -->
           <v-col class="d-flex justify-end">
-            <v-btn class="ml-2 large" variant="flat">
-              등록
-            </v-btn>
+
           </v-col>
         </v-row>
       </v-card>
@@ -70,7 +68,7 @@
 
 <script>
 export default {
-  name: "GutAd00004",
+  name: "GutAd00032",
   data() {
     return {
       search: "",

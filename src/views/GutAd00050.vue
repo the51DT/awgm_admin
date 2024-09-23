@@ -70,7 +70,7 @@
 
 <script>
 export default {
-  name: "GutAd00004",
+  name: "GutAd00050",
   data() {
     return {
       search: "",

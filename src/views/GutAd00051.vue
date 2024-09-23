@@ -6,115 +6,61 @@
 
         <v-row class="input-row" align="center">
           <v-col cols="2">
-            <span>노출여부</span>
+            <span>관리자명</span>
           </v-col>
           <v-col cols="10" class="d-flex">
-            <v-radio-group v-model="exposure" inline hide-details>
-              <v-radio label="노출" value="exposed"></v-radio>
-              <v-radio label="미노출" value="notExposed" class="ml-4"></v-radio>
+            <v-text-field
+              :loading="loading"
+              density="compact"
+              label="관리자명을 입력해 주세요."
+              variant="outlined"
+              hide-details
+              single-line
+              @click:append-inner="onClick"
+            ></v-text-field>
+          </v-col>
+        </v-row>
+
+        <v-row class="input-row" align="center">
+          <v-col cols="2">
+            <span>관리자ID</span>
+          </v-col>
+          <v-col cols="10" class="d-flex">
+            <v-text-field
+              :loading="loading"
+              density="compact"
+              label="Okta id를 입력해 주세요."
+              variant="outlined"
+              hide-details
+              single-line
+              @click:append-inner="onClick"
+            ></v-text-field>
+          </v-col>
+        </v-row>
+
+        <v-row class="input-row" align="center">
+          <v-col cols="2">
+            <span>사용여부</span>
+          </v-col>
+          <v-col cols="10" class="d-flex">
+            <v-radio-group v-model="using" inline hide-details>
+              <v-radio label="사용" value="use"></v-radio>
+              <v-radio label="미사용" value="notUse" class="ml-4"></v-radio>
             </v-radio-group>
           </v-col>
         </v-row>
 
         <v-row class="input-row" align="center">
           <v-col cols="2">
-            <span>노출기간</span>
+            <span>권한</span>
           </v-col>
           <v-col cols="10" class="d-flex">
-            <v-date-input
-              :loading="loading"
-              density="compact"
-              variant="outlined"
-              hide-details
-              single-line
-              @click:append-inner="onClick"
-              prepend-icon=""
-              append-inner-icon="$calendar"
-            ></v-date-input>
-            <div class="ml-4 mr-4 date-sub">~</div>
-            <v-date-input
-              :loading="loading"
-              density="compact"
-              variant="outlined"
-              hide-details
-              single-line
-              @click:append-inner="onClick"
-              prepend-icon=""
-              append-inner-icon="$calendar"
-            ></v-date-input>
-          </v-col>
-        </v-row>
-
-        <v-row class="input-row" align="center">
-          <v-col cols="2">
-            <span>배너명</span>
-          </v-col>
-          <v-col cols="10" class="d-flex">
-            <v-text-field
-              :loading="loading"
-              density="compact"
-              label="배너명을 입력해 주세요."
-              variant="outlined"
-              hide-details
-              single-line
-              @click:append-inner="onClick"
-            ></v-text-field>
-          </v-col>
-        </v-row>
-
-        <v-row class="input-row" align="center">
-          <v-col cols="2">
-            <span>배너링크</span>
-          </v-col>
-          <v-col cols="10" class="d-flex">
-            <v-text-field
-              :loading="loading"
-              density="compact"
-              label="배너링크를 입력해 주세요."
-              variant="outlined"
-              hide-details
-              single-line
-              @click:append-inner="onClick"
-            ></v-text-field>
-          </v-col>
-        </v-row>
-
-        <v-row class="input-row" align="center">
-          <v-col cols="2">
-            <span>배너 내용</span>
-          </v-col>
-          <v-col cols="10" class="d-flex">
-            <v-text-field
-              :loading="loading"
-              density="compact"
-              label="배너내용을 입력해 주세요."
-              variant="outlined"
-              hide-details
-              single-line
-              @click:append-inner="onClick"
-            ></v-text-field>
-          </v-col>
-        </v-row>
-
-        <v-row class="input-row" align="center">
-          <v-col cols="2">
-            <span>배너 이미지</span>
-          </v-col>
-          <v-col cols="10" class="d-flex">
-            <v-file-input
-              :loading="loading"
-              density="compact"
-              label="배너 이미지를 입력해 주세요."
-              variant="outlined"
-              hide-details
-              single-line
-              @click:append-inner="onClick"
-              prepend-icon=""
-              ref="file"
-            ></v-file-input>
-            <v-btn class="ml-2 large" variant="flat" @click="$refs.file.click()"
-              >파일첨부</v-btn
-            >
+            <v-radio-group v-model="authority" inline hide-details>
+              <v-radio label="슈퍼 관리" value="super"></v-radio>
+              <v-radio label="일반 관리" value="common" class="ml-4"></v-radio>
+              <v-radio label="회원 관리" value="member" class="ml-4"></v-radio>
+              <v-radio label="챌린지 관리" value="challenge" class="ml-4"></v-radio>
+            </v-radio-group>
           </v-col>
         </v-row>
 
@@ -137,10 +83,10 @@
 
 <script>
 export default {
-  name: "GutAd00004",
+  name: "GutAd00051",
   data() {
     return {
-      exposure: "exposed",
+      using: "use",
     };
   },
 };
