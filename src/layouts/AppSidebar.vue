@@ -62,7 +62,8 @@ const isSelected = (item) => {
 
 <style scoped lang="scss">
 .completed { /* 페이지 완료 여부용 */
-  background-color: #000; 
+  text-decoration: line-through;
+  text-decoration-color: #fff;
   font-weight: bold; 
 }
 </style>
