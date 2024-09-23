@@ -135,6 +135,7 @@ export const menuRoutes = [
       {
         text: "권한 관리>상세/수정-GutAd00055",
         path: "/권한 관리상세/수정-GutAd00055",
+        isCompleted: true
       },
     ],
   },
