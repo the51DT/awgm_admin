@@ -1,6 +1,6 @@
 <template>
   <v-app-bar app fixed>
-    <v-app-bar-nav-icon @click="toggleDrawer"></v-app-bar-nav-icon>
+    <v-app-bar-nav-icon @click="toggleDrawer" color="white"></v-app-bar-nav-icon>
     <v-toolbar-title>Amway Gutmorning Admin</v-toolbar-title>
     <v-spacer />
     <user-menu />
