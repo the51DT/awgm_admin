@@ -4,7 +4,28 @@
       <v-card class="custom" flat>
         <v-card-title class="card-title">미션 인증 현황</v-card-title>
         <v-row class="input-row" align="center">
-          <v-col cols="5">
+          <v-col cols="5" class="d-flex align-center">
+            <v-date-input
+              :loading="loading"
+              density="compact"
+              variant="outlined"
+              hide-details
+              single-line
+              @click:append-inner="onClick"
+              prepend-icon=""
+              append-inner-icon="$calendar"
+            ></v-date-input>
+            <div class="ml-4 mr-4 date-sub">~</div>
+            <v-date-input
+              :loading="loading"
+              density="compact"
+              variant="outlined"
+              hide-details
+              single-line
+              @click:append-inner="onClick"
+              prepend-icon=""
+              append-inner-icon="$calendar"
+            ></v-date-input>
           </v-col>
           <v-col class="d-flex justify-end pr-2" cols="2">
             <v-select 
@@ -58,9 +79,7 @@
 
           <!-- Register button on the right -->
           <v-col class="d-flex justify-end">
-            <v-btn class="ml-2 large" variant="flat">
-              등록
-            </v-btn>
+
           </v-col>
         </v-row>
       </v-card>
@@ -70,7 +89,7 @@
 
 <script>
 export default {
-  name: "GutAd00004",
+  name: "GutAd00034",
   data() {
     return {
       search: "",

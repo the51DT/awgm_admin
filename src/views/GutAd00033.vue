@@ -3,17 +3,65 @@
     <v-main class="pa-10">
       <v-card class="custom" flat>
         <v-card-title class="card-title">팀관리</v-card-title>
+
         <v-row class="input-row" align="center">
-          <v-col cols="5">
+          <v-col cols="2">
+            <span>챌린지명</span>
           </v-col>
-          <v-col class="d-flex justify-end pr-2" cols="2">
-            <v-select 
-            label="전체"
-            :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
-            variant="outlined"
-            inline 
-            hide-details 
-            density="compact"></v-select>
+          <v-col cols="10" class="d-flex">
+            <span>상시챌린지</span>
+          </v-col>
+        </v-row>
+
+        <v-row class="input-row" align="center">
+          <v-col cols="2">
+            <span>팀명</span>
+          </v-col>
+          <v-col cols="10" class="d-flex">
+            <span>25년 1월 것모닝 챌린지</span>
+          </v-col>
+        </v-row>
+
+        <v-row class="input-row" align="center">
+          <v-col cols="2">
+            <span>팀장명 / ID(ABO)</span>
+          </v-col>
+          <v-col cols="10" class="d-flex">
+            <span>고주영 / 389237482(77849458)</span>
+          </v-col>
+        </v-row>
+
+        <v-row class="input-row" align="center">
+          <v-col cols="2">
+            <span>시작일 / 종료일</span>
+          </v-col>
+          <v-col cols="10" class="d-flex">
+            <span>2025.01.01 ~ 2025.02.28</span>
+          </v-col>
+        </v-row>
+
+        <v-row class="input-row" align="center">
+          <v-col cols="2">
+            <span>생성일</span>
+          </v-col>
+          <v-col cols="10" class="d-flex">
+            <span>2024.12.28</span>
+          </v-col>
+        </v-row>
+
+        <v-row class="input-row" align="center">
+          <v-col cols="2">
+            <span>팀원</span>
+          </v-col>
+          <v-col cols="10" class="d-flex align-center">
+            <span>45명</span>
+            <v-btn class="ml-2 large" variant="outlined">팀원보기</v-btn>
+          </v-col>
+        </v-row>
+
+        <v-row class="input-row mt-6" align="center">
+          <v-col cols="7">
+            <h3>팀원정보</h3>
           </v-col>
           <v-col cols="5" class="pl-0 d-flex">
             <v-text-field
@@ -28,6 +76,7 @@
             <v-btn class="ml-2 large" variant="flat">검색</v-btn>
           </v-col>
         </v-row>
+
         <v-card class="custom-table mt-10 mb-10">
           <v-data-table
             height=""
@@ -37,9 +86,8 @@
             :items="filteredBanners"
             :search="search"
             hide-default-footer
-          >
-          </v-data-table
-        ></v-card>
+          ></v-data-table>
+        </v-card>
 
         <v-row class="footer-row">
           <!-- Save button on the left -->
@@ -58,11 +106,11 @@
 
           <!-- Register button on the right -->
           <v-col class="d-flex justify-end">
-            <v-btn class="ml-2 large" variant="flat">
-              등록
-            </v-btn>
+
           </v-col>
         </v-row>
+
+        
       </v-card>
     </v-main>
   </v-app>
@@ -70,7 +118,7 @@
 
 <script>
 export default {
-  name: "GutAd00004",
+  name: "GutAd00033",
   data() {
     return {
       search: "",

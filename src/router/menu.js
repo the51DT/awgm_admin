@@ -71,26 +71,27 @@ export const menuRoutes = [
   {
     text: "회원 관리",
     subMenu: [
-      { text: "회원 목록-GutAd00021", path: "/회원 목록-GutAd00021" },
-      { text: "회원 목록>상세-GutAd00022", path: "/회원 목록>상세-GutAd00022" },
+      { text: "회원 목록-GutAd00021", path: "/회원 목록-GutAd00021", isCompleted: true },
+      { text: "회원 목록>상세-GutAd00022", path: "/회원 목록>상세-GutAd00022", isCompleted: true },
       { text: "휴먼회원 관리-GutAd00023", path: "/휴먼회원 관리-GutAd00023" },
       {
         text: "휴먼회원 관리>상세-GutAd00024",
         path: "/휴먼회원 관리>상세-GutAd00024",
       },
-      { text: "접속 로그-GutAd00025", path: "/접속 로그-GutAd00025" },
+      { text: "접속 로그-GutAd00025", path: "/접속 로그-GutAd00025", isCompleted: true },
     ],
   },
   {
     text: "첼린지 관리",
     subMenu: [
-      { text: "첼린지-GutAd00026", path: "/첼린지-GutAd00026" },
+      { text: "첼린지-GutAd00026", path: "/첼린지-GutAd00026", isCompleted: true },
       { text: "첼린지>등록-GutAd00027", path: "/첼린지>등록-GutAd00027", isCompleted: true },
       {
         text: "첼린지>상세/수정-GutAd00028",
         path: "/첼린지>상세/수정-GutAd00028",
+        isCompleted: true
       },
-      { text: "보상수령대상자-GutAd00029", path: "/보상수령대상자-GutAd00029" },
+      { text: "보상수령대상자-GutAd00029", path: "/보상수령대상자-GutAd00029", isCompleted: true },
       {
         text: "보상수령대상자>등록-GutAd00030",
         path: "/보상수령대상자>등록-GutAd00030",
@@ -99,34 +100,37 @@ export const menuRoutes = [
         text: "보상수령대상자>상세/수정-GutAd00031",
         path: "/보상수령대상자>상세/수정-GutAd00031",
       },
-      { text: "팀관리-GutAd00032", path: "/팀관리-GutAd00032" },
-      { text: "팀관리>상세-GutAd00033", path: "/팀관리>상세-GutAd00033" },
+      { text: "팀관리-GutAd00032", path: "/팀관리-GutAd00032", isCompleted: true },
+      { text: "팀관리>상세-GutAd00033", path: "/팀관리>상세-GutAd00033", isCompleted: true  },
     ],
   },
   {
     text: "미션 관리",
     subMenu: [
-      { text: "미션인증현황-GutAd00034", path: "/미션인증현황-GutAd00034" },
+      { text: "미션인증현황-GutAd00034", path: "/미션인증현황-GutAd00034", isCompleted: true },
       {
         text: "미션인증현황>상세-GutAd00035",
         path: "/미션인증현황>상세-GutAd00035",
+        isCompleted: true
       },
-      { text: "미션인증로그-GutAd00036", path: "/미션인증로그-GutAd00036" },
+      { text: "미션인증로그-GutAd00036", path: "/미션인증로그-GutAd00036", isCompleted: true },
     ],
   },
   {
     text: "시스템 관리",
     subMenu: [
-      { text: "관리자 관리-GutAd00050", path: "/관리자 관리-GutAd00050" },
+      { text: "관리자 관리-GutAd00050", path: "/관리자 관리-GutAd00050", isCompleted: true },
       {
         text: "관리자 관리>등록-GutAd00051",
         path: "/관리자 관리>등록-GutAd00051",
+        isCompleted: true
       },
       {
         text: "관리자 관리>상세/수정-GutAd00052",
         path: "/관리자 관리상세/수정-GutAd00052",
+        isCompleted: true
       },
-      { text: "권한 관리-GutAd00053", path: "/권한 관리-GutAd00053" },
+      { text: "권한 관리-GutAd00053", path: "/권한 관리-GutAd00053", isCompleted: true },
       { text: "권한 관리>등록-GutAd00054", path: "/권한 관리>등록-GutAd00054", isCompleted: true },
       {
         text: "권한 관리>상세/수정-GutAd00055",
