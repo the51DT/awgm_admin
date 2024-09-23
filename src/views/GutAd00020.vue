@@ -8,7 +8,24 @@
           <v-col cols="2">
             <span>제목</span>
           </v-col>
-          <v-col cols="10" class="d-flex">
+          <v-col class="d-flex justify-end pr-0" cols="2">
+            <v-select
+              label="전체"
+              :items="[
+                'California',
+                'Colorado',
+                'Florida',
+                'Georgia',
+                'Texas',
+                'Wyoming',
+              ]"
+              variant="outlined"
+              inline
+              hide-details
+              density="compact"
+            ></v-select>
+          </v-col>
+          <v-col cols="8" class="d-flex">
             <span>소통합시다</span>
           </v-col>
         </v-row>
