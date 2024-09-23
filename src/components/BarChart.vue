@@ -44,7 +44,7 @@ export default {
         datasets: [
           {
             label: "가입",
-            backgroundColor: "blue",
+            backgroundColor: "#3CA877",
             data: [300, 500, 800, 900, 950, 1000, 1200, 1300, 1500, 2400],
           },
           {

@@ -9,7 +9,7 @@
             <BarChart />
           </v-col>
         </v-row>
-        <v-row class="input-row mt-6" align="center">
+        <v-row class="input-row mt-12" align="center">
           <v-col>
             <h3>미션 누적 현황 <span>(12월 1일 ~ 12월 14일)</span></h3>
             <BarChart />
@@ -27,3 +27,4 @@ export default {
   components: { BarChart },
 };
 </script>
+<style scoped lang="scss"></style>

@@ -3,8 +3,8 @@ import { menuRoutes } from "./menu.js";
 
 // 기본 경로 설정
 const baseRoutes = [
-  { path: "/", component: () => import("@/views/AppBanner01.vue") },
-  { path: "/AppMenu1", component: () => import("@/views/AppMenu1.vue") },
+  { path: "/", component: () => import("@/views/GutAd00002.vue") },
+  /* { path: "/AppMenu1", component: () => import("@/views/AppMenu1.vue") },
   { path: "/AppMenu2", component: () => import("@/views/AppMenu2.vue") },
   { path: "/AppMenu21", component: () => import("@/views/AppNotice.vue") },
   { path: "/AppMenu3", component: () => import("@/views/AppBanner01.vue") },
@@ -22,7 +22,7 @@ const baseRoutes = [
     path: "/AppCS04",
     component: () => import("@/views/AppCS04.vue"),
     name: "AppCS04",
-  },
+  }, */
 ];
 
 const dynamicRoutes = menuRoutes.map((route) => {
