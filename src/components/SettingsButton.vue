@@ -1,6 +1,6 @@
 <!-- src/components/UserMenu.vue -->
 <template>
-  <v-btn class="mr-4" variant="outlined"> 로그아웃 </v-btn>
+  <v-btn class="mr-4" variant="outlined" color="white"> 로그아웃 </v-btn>
 </template>
 
 <script setup>
