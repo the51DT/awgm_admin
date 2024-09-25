@@ -87,17 +87,6 @@
         </v-row>
 
         <v-row class="input-row">
-          <v-col cols="12" class="d-flex align-center justify-space-between ga-4">
-            <span class="mr-2 flex-shrink-0">개선 중</span>
-            <div class="d-flex justify-space-between align-center w-100">
-              <span>난 싫어요</span>
-                <span class="ml-2 flex-shrink-0">고주영</span>
-              </div>
-              <div class="ml-2 d-flex justify-end align-center">
-                <v-btn class="large" variant="text">삭제</v-btn>
-                <v-btn class="ml-2 large" variant="text">수정</v-btn>
-              </div>
-          </v-col>
           <v-col cols="2">
             <v-select
               label="개선 중"
@@ -126,6 +115,20 @@
               @click:append-inner="onClick"
             ></v-text-field>
             <v-btn class="ml-4 large" variant="flat">댓글저장</v-btn>
+          </v-col>
+        </v-row>
+
+        <v-row class="input-row">
+          <v-col cols="12" class="d-flex align-center justify-space-between ga-4">
+            <span class="mr-2 flex-shrink-0">개선 중</span>
+            <div class="d-flex justify-space-between align-center w-100">
+              <span>난 싫어요</span>
+                <span class="ml-2 flex-shrink-0">고주영</span>
+              </div>
+              <div class="ml-2 d-flex justify-end align-center">
+                <v-btn class="large" variant="text">삭제</v-btn>
+                <v-btn class="ml-2 large" variant="text">수정</v-btn>
+              </div>
           </v-col>
         </v-row>
       </v-card>
