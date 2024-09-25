@@ -2,76 +2,148 @@
   <v-app>
     <v-main class="pa-10">
       <v-card class="custom" flat>
-        <v-card-title class="card-title">회원</v-card-title>
-        <v-row class="input-row" align="center">
-          <v-col cols="3">
-          </v-col>
-          <v-col class="d-flex justify-end pr-2" cols="2">
-            <v-select 
-            label="회원"
-            :items="['회원', '탈퇴', '강제탈퇴']"
-            variant="outlined"
-            inline 
-            hide-details
-            single-line
-            density="compact"
-          ></v-select>
-          </v-col>
-          <v-col class="d-flex justify-end pr-2" cols="2">
-            <v-select 
-            label="이름"
-            :items="['이름', '연락처', '아이디']"
-            variant="outlined"
-            inline 
-            hide-details 
-            single-line
-            density="compact"
-          ></v-select>
-          </v-col>
-          <v-col cols="5" class="pl-0 d-flex">
-            <v-text-field
-              :loading="loading"
-              density="compact"
-              label="검색어를 입력해주세요."
-              variant="outlined"
-              hide-details
-              single-line
-              @click:append-inner="onClick"
-            ></v-text-field>
-            <v-btn class="ml-2 large" variant="flat">검색</v-btn>
-          </v-col>
-        </v-row>
-        <v-card class="custom-table mt-10 mb-10">
-          <v-data-table
-            height=""
-            fixed-header
-            class="custom-table"
-            :headers="headers"
-            :items="filteredBanners"
-            :search="search"
-            hide-default-footer
-          >
-          </v-data-table></v-card>
-        <v-row class="footer-row">
-          <!-- Save button on the left -->
-          <v-col class="d-flex justify-start">
+        <v-card-title class="card-title">회원정보</v-card-title>
+        <v-tabs v-model="tab">
+          <v-tab class="border mr-2" value="one">일반 회원</v-tab>
+          <v-tab class="border" value="two">자녀 회원</v-tab>
+        </v-tabs>
 
-          </v-col>
-          <!-- Pagination in the center -->
-          <v-col class="d-flex justify-center">
-            <v-pagination
-              v-model="page"
-              :length="totalPages"
-              circle
-              class="pagination"
-              color="primary"
-            ></v-pagination>
-          </v-col>
-          <!-- Register button on the right -->
-          <v-col class="d-flex justify-end">
-
-          </v-col>
-        </v-row>
+        <v-tabs-window class="mt-4" v-model="tab">
+          <v-tabs-window-item value="one">
+            <v-row class="input-row" align="center">
+              <v-col cols="3"> </v-col>
+              <v-col class="d-flex justify-end pr-0" cols="2">
+                <v-select
+                  label="회원"
+                  :items="['회원', '탈퇴', '강제탈퇴']"
+                  variant="outlined"
+                  inline
+                  hide-details
+                  single-line
+                  density="compact"
+                ></v-select>
+              </v-col>
+              <v-col class="d-flex justify-end pr-2 pl-2" cols="2">
+                <v-select
+                  label="이름"
+                  :items="['이름', '연락처', '아이디']"
+                  variant="outlined"
+                  inline
+                  hide-details
+                  single-line
+                  density="compact"
+                ></v-select>
+              </v-col>
+              <v-col cols="5" class="pl-0 d-flex">
+                <v-text-field
+                  :loading="loading"
+                  density="compact"
+                  label="검색어를 입력해주세요."
+                  variant="outlined"
+                  hide-details
+                  single-line
+                  @click:append-inner="onClick"
+                ></v-text-field>
+                <v-btn class="ml-2 large" variant="flat">검색</v-btn>
+              </v-col>
+            </v-row>
+            <v-card class="custom-table mt-10 mb-10">
+              <v-data-table
+                height=""
+                fixed-header
+                class="custom-table"
+                :headers="headers"
+                :items="filteredBanners"
+                :search="search"
+                hide-default-footer
+              >
+              </v-data-table
+            ></v-card>
+            <v-row class="footer-row">
+              <!-- Save button on the left -->
+              <v-col class="d-flex justify-start"> </v-col>
+              <!-- Pagination in the center -->
+              <v-col class="d-flex justify-center">
+                <v-pagination
+                  v-model="page"
+                  :length="totalPages"
+                  circle
+                  class="pagination"
+                  color="primary"
+                ></v-pagination>
+              </v-col>
+              <!-- Register button on the right -->
+              <v-col class="d-flex justify-end"> </v-col>
+            </v-row>
+          </v-tabs-window-item>
+          <v-tabs-window-item value="two">
+            <v-row class="input-row" align="center">
+              <v-col cols="3"> </v-col>
+              <v-col class="d-flex justify-end pr-0" cols="2">
+                <v-select
+                  label="회원"
+                  :items="['회원', '탈퇴', '강제탈퇴']"
+                  variant="outlined"
+                  inline
+                  hide-details
+                  single-line
+                  density="compact"
+                ></v-select>
+              </v-col>
+              <v-col class="d-flex justify-end pr-2 pl-2" cols="2">
+                <v-select
+                  label="이름"
+                  :items="['이름', '연락처', '아이디']"
+                  variant="outlined"
+                  inline
+                  hide-details
+                  single-line
+                  density="compact"
+                ></v-select>
+              </v-col>
+              <v-col cols="5" class="pl-0 d-flex">
+                <v-text-field
+                  :loading="loading"
+                  density="compact"
+                  label="검색어를 입력해주세요."
+                  variant="outlined"
+                  hide-details
+                  single-line
+                  @click:append-inner="onClick"
+                ></v-text-field>
+                <v-btn class="ml-2 large" variant="flat">검색</v-btn>
+              </v-col>
+            </v-row>
+            <v-card class="custom-table mt-10 mb-10">
+              <v-data-table
+                height=""
+                fixed-header
+                class="custom-table"
+                :headers="headers"
+                :items="filteredBanners"
+                :search="search"
+                hide-default-footer
+              >
+              </v-data-table
+            ></v-card>
+            <v-row class="footer-row">
+              <!-- Save button on the left -->
+              <v-col class="d-flex justify-start"> </v-col>
+              <!-- Pagination in the center -->
+              <v-col class="d-flex justify-center">
+                <v-pagination
+                  v-model="page"
+                  :length="totalPages"
+                  circle
+                  class="pagination"
+                  color="primary"
+                ></v-pagination>
+              </v-col>
+              <!-- Register button on the right -->
+              <v-col class="d-flex justify-end"> </v-col>
+            </v-row>
+          </v-tabs-window-item>
+        </v-tabs-window>
       </v-card>
     </v-main>
   </v-app>
@@ -222,6 +294,7 @@ export default {
       ],
       page: 1,
       totalPages: 10, // Ensure this value is correct
+      tab: null,
     };
   },
   computed: {
