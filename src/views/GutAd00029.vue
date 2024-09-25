@@ -4,7 +4,16 @@
       <v-card class="custom" flat>
         <v-card-title class="card-title">보상 수령 대상자</v-card-title>
         <v-row class="input-row" align="center">
-          <v-col cols="5">
+          <v-col cols="3">
+          </v-col>
+          <v-col class="d-flex justify-end pr-2" cols="2">
+            <v-select 
+            label="챌린지 선택"
+            :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
+            variant="outlined"
+            inline 
+            hide-details 
+            density="compact"></v-select>
           </v-col>
           <v-col class="d-flex justify-end pr-2" cols="2">
             <v-select 

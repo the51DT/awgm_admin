@@ -24,10 +24,10 @@
 
         <v-row class="input-row" align="center">
           <v-col cols="2">
-            <span>팀장명 / ID(ABO)</span>
+            <span>팀장명 / ID(ABO) / 닉네임</span>
           </v-col>
           <v-col cols="10" class="d-flex">
-            <span>고주영 / 389237482(77849458)</span>
+            <span>고주영 / 389237482(77849458) / 고주</span>
           </v-col>
         </v-row>
 

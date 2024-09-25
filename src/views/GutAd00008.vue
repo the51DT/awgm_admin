@@ -78,6 +78,24 @@
             ></v-text-field>
           </v-col>
         </v-row>
+
+        <v-row class="input-row">
+          <v-col cols="2">
+            <span>팝업 내용</span>
+          </v-col>
+          <v-col cols="10" class="d-flex">
+            <v-textarea
+              :loading="loading"
+              density="compact"
+              label="에디터 영역"
+              variant="outlined"
+              hide-details
+              single-line
+              @click:append-inner="onClick"
+            ></v-textarea>
+          </v-col>
+        </v-row>
+
         <v-row class="input-row" align="center">
           <v-col cols="2">
             <span>팝업 이미지</span>
