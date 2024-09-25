@@ -1,4 +1,5 @@
-# awgm
+# awgm_admin
+https://amwayadmin.netlify.app/
 
 ## Project setup - Vue3 CLI + Vuetify 3 Vue CLI(preview) 
 ```
