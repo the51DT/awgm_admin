@@ -79,7 +79,25 @@
 
         <v-row class="input-row" align="center">
           <v-col cols="2">
-            <span>바디키인증</span>
+            <span>다타익선 인증</span>
+          </v-col>
+          <v-col cols="10" class="d-flex">
+            <span>인증 완료</span>
+          </v-col>
+        </v-row>
+
+        <v-row class="input-row" align="center">
+          <v-col cols="2">
+            <span>바디키 인증</span>
+          </v-col>
+          <v-col cols="10" class="d-flex">
+            <span>미인증</span>
+          </v-col>
+        </v-row>
+
+        <v-row class="input-row" align="center">
+          <v-col cols="2">
+            <span>그로잉 랩</span>
           </v-col>
           <v-col cols="10" class="d-flex">
             <span>인증 완료</span>
@@ -120,6 +138,6 @@
 
 <script>
 export default {
-  name: "GutAd00021",
+  name: "GutAd00022",
 };
 </script>
