@@ -211,6 +211,10 @@ export const menuRoutes = [
     ],
   },
   {
+    text: "카메라",
+    subMenu: [{ text: "통계-GutAd00045", path: "/통계-GutAd00045" }],
+  },
+  {
     text: "시스템 관리",
     subMenu: [
       {
