@@ -10,9 +10,9 @@
           </v-col>
           <v-col class="d-flex justify-end pr-0" cols="2">
             <v-select
-              label="회원 관련"
+              label="전체"
               :items="[
-                'California',
+                '회원관련',
                 'Colorado',
                 'Florida',
                 'Georgia',
@@ -54,7 +54,6 @@
             ></v-textarea>
           </v-col>
         </v-row>
-
         <v-row class="input-row">
           <v-col cols="2" class="d-flex justify-start">
             <v-btn class="large" variant="flat">삭제</v-btn>
@@ -65,39 +64,80 @@
             <v-btn class="ml-2 large" variant="flat">수정</v-btn>
           </v-col>
         </v-row>
-
         <v-row class="input-row mt-6">
           <v-col cols="12">
             <h3>댓글수정</h3>
           </v-col>
         </v-row>
+        <div v-for="(comment, index) in comments" :key="index">
+          <v-row class="input-row">
+            <v-col
+              cols="12"
+              class="d-flex align-center justify-space-between ga-4"
+            >
+              <span class="mr-2 flex-shrink-0">{{ comment.title }}</span>
+              <div class="d-flex justify-space-between align-center w-100">
+                <span>{{ comment.content }}</span>
+                <span class="ml-2 flex-shrink-0">{{ comment.author }}</span>
+              </div>
+              <div class="ml-2 d-flex justify-end align-center">
+                <v-btn
+                  class="large"
+                  variant="text"
+                  @click="deleteComment(index)"
+                  >삭제</v-btn
+                >
+                <v-btn
+                  class="ml-2 large"
+                  variant="text"
+                  @click="toggleEdit(index)"
+                  >수정</v-btn
+                >
+              </div>
+            </v-col>
+          </v-row>
 
-        <v-row class="input-row">
-          <v-col cols="12" class="d-flex align-center justify-space-between ga-4">
-            <span class="mr-2 flex-shrink-0">개선 중</span>
-            <div class="d-flex justify-space-between align-center w-100">
-              <span>당신 의견 좋아요.</span>
-              <span class="ml-2 flex-shrink-0">명의실</span>
-            </div>
-            <div class="ml-2 d-flex justify-end align-center">
-              <v-btn class="large" variant="text">삭제</v-btn>
-              <v-btn class="ml-2 large" variant="text">수정</v-btn>
-            </div>
+          <v-row class="input-row" v-if="editIndex === index">
+            <v-col cols="2">
+              <v-select
+                v-model="comment.selected"
+                label="개선 중"
+                :items="['개선 대기', '취소', '개선 완료']"
+                variant="outlined"
+                inline
+                hide-details
+                density="compact"
+              ></v-select>
+            </v-col>
+            <v-col cols="10" class="d-flex">
+              <v-textarea
+                v-model="comment.content"
+                :loading="loading"
+                density="compact"
+                placeholder="등록된 댓글 내용 노출"
+                variant="outlined"
+                hide-details
+                single-line
+              ></v-textarea>
+              <v-btn
+                class="ml-4 large"
+                @click="updateComment(index)"
+                variant="flat"
+                >댓글수정</v-btn
+              >
+            </v-col>
+          </v-row>
+        </div>
+        <v-row class="input-row mt-6">
+          <v-col cols="12">
+            <h3>댓글등록</h3>
           </v-col>
         </v-row>
-
         <v-row class="input-row">
           <v-col cols="2">
             <v-select
-              label="개선 중"
-              :items="[
-                'California',
-                'Colorado',
-                'Florida',
-                'Georgia',
-                'Texas',
-                'Wyoming',
-              ]"
+              label="선택"
+              :items="['개선 중', '개선 대기', '취소', '개선 완료']"
               variant="outlined"
               inline
               hide-details
@@ -105,30 +145,14 @@
             ></v-select>
           </v-col>
           <v-col cols="10" class="d-flex">
-            <v-text-field
-              :loading="loading"
+            <v-textarea
               density="compact"
-              label="댓글을 입력하세요."
+              placeholder="댓글을 입력하세요."
               variant="outlined"
               hide-details
               single-line
-              @click:append-inner="onClick"
-            ></v-text-field>
+            ></v-textarea>
             <v-btn class="ml-4 large" variant="flat">댓글저장</v-btn>
-          </v-col>
-        </v-row>
-
-        <v-row class="input-row">
-          <v-col cols="12" class="d-flex align-center justify-space-between ga-4">
-            <span class="mr-2 flex-shrink-0">개선 중</span>
-            <div class="d-flex justify-space-between align-center w-100">
-              <span>난 싫어요</span>
-                <span class="ml-2 flex-shrink-0">고주영</span>
-              </div>
-              <div class="ml-2 d-flex justify-end align-center">
-                <v-btn class="large" variant="text">삭제</v-btn>
-                <v-btn class="ml-2 large" variant="text">수정</v-btn>
-              </div>
           </v-col>
         </v-row>
       </v-card>
@@ -137,7 +161,60 @@
 </template>
 
 <script>
+import { ref } from "vue";
+
 export default {
   name: "GutAd00020",
+  setup() {
+    const loading = ref(false);
+    const editIndex = ref(null);
+
+    const comments = ref([
+      {
+        title: "개선 대기",
+        content: "당신 의견 좋아요.",
+        author: "명의실",
+        selected: "개선 대기",
+      },
+      {
+        title: "취소",
+        content: "난 싫어요",
+        author: "고주영",
+        selected: "취소",
+      },
+    ]);
+
+    const toggleEdit = (index) => {
+      editIndex.value = editIndex.value === index ? null : index;
+    };
+
+    const updateComment = (index) => {
+      comments.value[index].title = comments.value[index].selected;
+      // eslint-disable-next-line no-console
+      console.log("댓글 수정 완료", comments.value[index]);
+      editIndex.value = null;
+    };
+
+    const deleteComment = (index) => {
+      comments.value.splice(index, 1);
+      // eslint-disable-next-line no-console
+      console.log("댓글 삭제 완료", index);
+    };
+
+    const onClick = () => {
+      // eslint-disable-next-line no-console
+      console.log("댓글 수정 버튼 클릭됨");
+    };
+
+    return {
+      comments,
+      loading,
+      editIndex,
+      toggleEdit,
+      updateComment,
+      deleteComment,
+      onClick,
+    };
+  },
 };
 </script>
