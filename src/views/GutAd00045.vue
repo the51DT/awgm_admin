@@ -1,36 +1,38 @@
 <template>
   <div>
-    <button @click="openCamera">사진 촬영</button>
-    <img v-if="imageSrc" :src="imageSrc" alt="Captured Image" />
+    <input
+      type="file"
+      accept="image/*"
+      capture="camera"
+      @change="handleFileUpload"
+    />
+    <img v-if="imageUrl" :src="imageUrl" alt="Uploaded Image" />
   </div>
 </template>
-
 <script>
-import { ref } from "vue";
 export default {
-  name: "GutAd00045",
-};
-const imageSrc = ref(null);
-
-const openCamera = () => {
-  const input = document.createElement("input");
-  input.type = "file";
-  input.accept = "image/*";
-  input.capture = "camera";
-
-  input.addEventListener("change", (event) => {
-    if (event.target.files && event.target.files.length > 0) {
+  data() {
+    return {
+      imageUrl: null, // 업로드된 이미지 URL
+    };
+  },
+  methods: {
+    handleFileUpload(event) {
       const file = event.target.files[0];
-      const reader = new FileReader();
-
-      reader.onload = (e) => {
-        imageSrc.value = e.target.result;
-      };
-
-      reader.readAsDataURL(file);
-    }
-  });
-
-  input.click();
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          this.imageUrl = e.target.result; // 이미지 URL 설정
+        };
+        reader.readAsDataURL(file); // 파일을 Data URL로 읽기
+      }
+    },
+  },
 };
 </script>
+<style scoped>
+img {
+  max-width: 100%; /* 이미지가 화면을 넘어가지 않도록 */
+  height: auto;
+}
+</style>
