@@ -1,19 +1,16 @@
 <template>
   <div>
-    <input
-      type="file"
-      accept="image/*"
-      capture="environment"
-      @change="handleFileUpload"
-    />
+    <input type="file" accept="image/*" @change="handleFileUpload" />
     <img v-if="imageUrl" :src="imageUrl" alt="Uploaded Image" />
+    <button @click="openCamera">사진촬영 업로드 테스트</button>
   </div>
 </template>
+
 <script>
 export default {
   data() {
     return {
-      imageUrl: null, // 업로드된 이미지 URL
+      imageUrl: null,
     };
   },
   methods: {
@@ -27,12 +24,16 @@ export default {
         reader.readAsDataURL(file);
       }
     },
+    openCamera() {
+      const input = document.createElement("input");
+      input.type = "file";
+      input.accept = "image/*";
+      input.capture = "environment";
+      input.onchange = (event) => {
+        this.handleFileUpload(event);
+      };
+      input.click();
+    },
   },
 };
 </script>
-<style scoped>
-img {
-  max-width: 100%;
-  height: auto;
-}
-</style>
