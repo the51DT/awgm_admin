@@ -1,8 +1,14 @@
 <template>
   <div>
-    <input type="file" accept="image/*" @change="handleFileUpload" />
+    <input
+      type="file"
+      accept="image/*"
+      id="cameraInput"
+      style="display: none"
+      @change="handleFileUpload"
+    />
+    <button @click="openCamera">카메라 열기</button>
     <img v-if="imageUrl" :src="imageUrl" alt="Uploaded Image" />
-    <button @click="openCamera">사진촬영 업로드 테스트</button>
   </div>
 </template>
 
@@ -25,13 +31,8 @@ export default {
       }
     },
     openCamera() {
-      const input = document.createElement("input");
-      input.type = "file";
-      input.accept = "image/*";
-      input.capture = "environment";
-      input.onchange = (event) => {
-        this.handleFileUpload(event);
-      };
+      const input = document.getElementById("cameraInput");
+      input.capture = "environment"; // 후면 카메라 설정
       input.click();
     },
   },
