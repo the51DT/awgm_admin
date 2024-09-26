@@ -101,8 +101,8 @@
             <v-col cols="2">
               <v-select
                 v-model="comment.selected"
-                label="개선 중"
-                :items="['개선 대기', '취소', '개선 완료']"
+                label="선택"
+                :items="['개선 중', '개선 대기', '취소', '개선 완료']"
                 variant="outlined"
                 inline
                 hide-details
