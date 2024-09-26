@@ -3,7 +3,7 @@
     <input
       type="file"
       accept="image/*"
-      capture="camera"
+      capture="environment"
       @change="handleFileUpload"
     />
     <img v-if="imageUrl" :src="imageUrl" alt="Uploaded Image" />
@@ -22,9 +22,9 @@ export default {
       if (file) {
         const reader = new FileReader();
         reader.onload = (e) => {
-          this.imageUrl = e.target.result; // 이미지 URL 설정
+          this.imageUrl = e.target.result;
         };
-        reader.readAsDataURL(file); // 파일을 Data URL로 읽기
+        reader.readAsDataURL(file);
       }
     },
   },
@@ -32,7 +32,7 @@ export default {
 </script>
 <style scoped>
 img {
-  max-width: 100%; /* 이미지가 화면을 넘어가지 않도록 */
+  max-width: 100%;
   height: auto;
 }
 </style>
