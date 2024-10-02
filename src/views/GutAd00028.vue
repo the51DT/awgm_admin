@@ -2,11 +2,11 @@
   <v-app>
     <v-main class="pa-10">
       <v-card class="custom" flat>
-        <v-card-title class="card-title">챌린지</v-card-title>
+        <v-card-title class="card-title">챌린지 수정</v-card-title>
         <div class="scroll-area">
           <v-row class="input-row" align="center">
             <v-col cols="2">
-              <span>메인 챌린지명</span>
+              <span>메인 챌린지명 *</span>
             </v-col>
             <v-col cols="10" class="d-flex">
               <v-text-field
@@ -38,7 +38,7 @@
           </v-row>
           <v-row class="input-row" align="center">
             <v-col cols="2">
-              <span>참여 팀원수</span>
+              <span>참여 팀원수 *</span>
             </v-col>
             <v-col cols="10" class="d-flex">
               <span class="mr-4 d-flex align-center">최소인원</span>
@@ -74,8 +74,13 @@
           </v-row>
           <v-sheet class="mt-4 pa-8" border="sm" rounded="lg">
             <v-row class="input-row" align="center">
+              <v-col cols="12">
+                <h4>서브 챌린지 01</h4>
+              </v-col>
+            </v-row>
+            <v-row class="input-row" align="center">
               <v-col cols="2">
-                <span>챌린지 명</span>
+                <span>챌린지 명 *</span>
               </v-col>
               <v-col cols="10" class="d-flex">
                 <v-text-field
@@ -91,7 +96,7 @@
             </v-row>
             <v-row class="input-row" align="center">
               <v-col cols="2">
-                <span>챌린지 기간</span>
+                <span>챌린지 기간 *</span>
               </v-col>
               <v-col cols="10" class="d-flex">
                 <v-date-input
@@ -119,7 +124,7 @@
             </v-row>
             <v-row class="input-row" align="center">
               <v-col cols="2">
-                <span>챌린지 노출기간</span>
+                <span>챌린지 노출기간 *</span>
               </v-col>
               <v-col cols="10" class="d-flex">
                 <v-date-input
@@ -136,7 +141,7 @@
             </v-row>
             <v-row class="input-row" align="center">
               <v-col cols="2">
-                <span>성공 조건 타입</span>
+                <span>성공 조건 타입 *</span>
               </v-col>
               <v-col cols="10" class="d-flex">
                 <v-radio-group v-model="successCondition" inline hide-details>
@@ -177,27 +182,58 @@
             </v-row>
             <v-row class="input-row" align="center">
               <v-col cols="2">
-                <span>보상</span>
+                <span>보상 *</span>
               </v-col>
               <v-col cols="10" class="d-flex">
                 <v-radio-group v-model="amends" inline hide-details>
                   <v-radio label="바우처" value="voucher"></v-radio>
-                  <v-radio label="ABC 수령" value="receive" class="ml-4"></v-radio>
-                  <v-radio label="바우처 + ABC 수령" value="both" class="ml-4"></v-radio>
+                  <v-radio
+                    label="ABC 수령"
+                    value="receive"
+                    class="ml-4"
+                  ></v-radio>
+                  <v-radio
+                    label="바우처 + ABC 수령"
+                    value="both"
+                    class="ml-4"
+                  ></v-radio>
                   <v-radio label="보상 없음" value="nix" class="ml-4"></v-radio>
                 </v-radio-group>
               </v-col>
             </v-row>
+            <v-row class="input-row" align="center">
+              <v-col cols="2">
+                <span>보상명</span>
+              </v-col>
+              <v-col cols="10" class="d-flex">
+                <v-text-field
+                  :loading="loading"
+                  density="compact"
+                  label="보상명을 입력해 주세요."
+                  variant="outlined"
+                  hide-details
+                  single-line
+                  @click:append-inner="onClick"
+                ></v-text-field>
+              </v-col>
+            </v-row>
             <v-row class="input-row">
               <v-col cols="12" class="d-flex justify-end">
-                <v-btn class="ml-2 large" variant="flat" color="red">-삭제</v-btn>
+                <v-btn class="ml-2 large" variant="flat" color="red"
+                  >-삭제</v-btn
+                >
               </v-col>
             </v-row>
           </v-sheet>
           <v-sheet class="mt-4 pa-8" border="sm" rounded="lg">
             <v-row class="input-row" align="center">
+              <v-col cols="12">
+                <h4>서브 챌린지 02</h4>
+              </v-col>
+            </v-row>
+            <v-row class="input-row" align="center">
               <v-col cols="2">
-                <span>챌린지 명</span>
+                <span>챌린지 명 *</span>
               </v-col>
               <v-col cols="10" class="d-flex">
                 <v-text-field
@@ -213,7 +249,7 @@
             </v-row>
             <v-row class="input-row" align="center">
               <v-col cols="2">
-                <span>챌린지 기간</span>
+                <span>챌린지 기간 *</span>
               </v-col>
               <v-col cols="10" class="d-flex">
                 <v-date-input
@@ -241,7 +277,7 @@
             </v-row>
             <v-row class="input-row" align="center">
               <v-col cols="2">
-                <span>챌린지 노출기간</span>
+                <span>챌린지 노출기간 *</span>
               </v-col>
               <v-col cols="10" class="d-flex">
                 <v-date-input
@@ -258,7 +294,7 @@
             </v-row>
             <v-row class="input-row" align="center">
               <v-col cols="2">
-                <span>성공 조건 타입</span>
+                <span>성공 조건 타입 *</span>
               </v-col>
               <v-col cols="10" class="d-flex">
                 <v-radio-group v-model="successCondition" inline hide-details>
@@ -299,27 +335,53 @@
             </v-row>
             <v-row class="input-row" align="center">
               <v-col cols="2">
-                <span>보상</span>
+                <span>보상 *</span>
               </v-col>
               <v-col cols="10" class="d-flex">
                 <v-radio-group v-model="amends" inline hide-details>
                   <v-radio label="바우처" value="voucher"></v-radio>
-                  <v-radio label="ABC 수령" value="receive" class="ml-4"></v-radio>
-                  <v-radio label="바우처 + ABC 수령" value="both" class="ml-4"></v-radio>
+                  <v-radio
+                    label="ABC 수령"
+                    value="receive"
+                    class="ml-4"
+                  ></v-radio>
+                  <v-radio
+                    label="바우처 + ABC 수령"
+                    value="both"
+                    class="ml-4"
+                  ></v-radio>
                   <v-radio label="보상 없음" value="nix" class="ml-4"></v-radio>
                 </v-radio-group>
               </v-col>
             </v-row>
+            <v-row class="input-row" align="center">
+              <v-col cols="2">
+                <span>보상명</span>
+              </v-col>
+              <v-col cols="10" class="d-flex">
+                <v-text-field
+                  :loading="loading"
+                  density="compact"
+                  label="보상명을 입력해 주세요."
+                  variant="outlined"
+                  hide-details
+                  single-line
+                  @click:append-inner="onClick"
+                ></v-text-field>
+              </v-col>
+            </v-row>
             <v-row class="input-row">
               <v-col cols="12" class="d-flex justify-end">
-                <v-btn class="ml-2 large" variant="flat" color="red">-삭제</v-btn>
+                <v-btn class="ml-2 large" variant="flat" color="red"
+                  >-삭제</v-btn
+                >
               </v-col>
             </v-row>
           </v-sheet>
         </div>
         <v-row class="footer-row">
           <v-col cols="2" class="d-flex justify-start">
-            <v-btn class="large" variant="flat">초기화</v-btn>
+            <v-btn class="large" variant="flat">삭제</v-btn>
           </v-col>
           <v-col cols="10" class="d-flex justify-end">
             <v-btn class="large" variant="outlined">목록</v-btn>
@@ -334,11 +396,11 @@
 <script>
 export default {
   name: "GutAd00028",
-  data () {
+  data() {
     return {
       successCondition: "certification",
       amends: "voucher",
-    }
+    };
   },
 };
 </script>

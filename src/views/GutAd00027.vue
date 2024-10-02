@@ -2,7 +2,7 @@
   <v-app>
     <v-main class="pa-10">
       <v-card class="custom" flat>
-        <v-card-title class="card-title">챌린지</v-card-title>
+        <v-card-title class="card-title">챌린지 등록</v-card-title>
         <div class="scroll-area">
           <v-row class="input-row" align="center">
             <v-col cols="2">
