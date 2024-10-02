@@ -3,114 +3,157 @@
     <v-main class="pa-10">
       <v-card class="custom" flat>
         <v-card-title class="card-title">팀관리</v-card-title>
+        <div class="scroll-area">
+          <v-row class="input-row" align="center">
+            <v-col cols="2">
+              <span>챌린지명</span>
+            </v-col>
+            <v-col cols="10" class="d-flex">
+              <span>상시챌린지</span>
+            </v-col>
+          </v-row>
 
-        <v-row class="input-row" align="center">
-          <v-col cols="2">
-            <span>챌린지명</span>
-          </v-col>
-          <v-col cols="10" class="d-flex">
-            <span>상시챌린지</span>
-          </v-col>
-        </v-row>
+          <v-row class="input-row" align="center">
+            <v-col cols="2">
+              <span>팀명</span>
+            </v-col>
+            <v-col cols="10" class="d-flex">
+              <span>25년 1월 것모닝 챌린지</span>
+            </v-col>
+          </v-row>
 
-        <v-row class="input-row" align="center">
-          <v-col cols="2">
-            <span>팀명</span>
-          </v-col>
-          <v-col cols="10" class="d-flex">
-            <span>25년 1월 것모닝 챌린지</span>
-          </v-col>
-        </v-row>
+          <v-row class="input-row" align="center">
+            <v-col cols="2">
+              <span>팀장명 / ID(ABO) / 닉네임</span>
+            </v-col>
+            <v-col cols="10" class="d-flex">
+              <span>고주영 / 389237482(77849458) / 고주</span>
+            </v-col>
+          </v-row>
 
-        <v-row class="input-row" align="center">
-          <v-col cols="2">
-            <span>팀장명 / ID(ABO) / 닉네임</span>
-          </v-col>
-          <v-col cols="10" class="d-flex">
-            <span>고주영 / 389237482(77849458) / 고주</span>
-          </v-col>
-        </v-row>
+          <v-row class="input-row" align="center">
+            <v-col cols="2">
+              <span>시작일 / 종료일</span>
+            </v-col>
+            <v-col cols="10" class="d-flex">
+              <span>2025.01.01 ~ 2025.02.28</span>
+            </v-col>
+          </v-row>
 
-        <v-row class="input-row" align="center">
-          <v-col cols="2">
-            <span>시작일 / 종료일</span>
-          </v-col>
-          <v-col cols="10" class="d-flex">
-            <span>2025.01.01 ~ 2025.02.28</span>
-          </v-col>
-        </v-row>
+          <v-row class="input-row" align="center">
+            <v-col cols="2">
+              <span>생성일</span>
+            </v-col>
+            <v-col cols="10" class="d-flex">
+              <span>2024.12.28</span>
+            </v-col>
+          </v-row>
 
-        <v-row class="input-row" align="center">
-          <v-col cols="2">
-            <span>생성일</span>
-          </v-col>
-          <v-col cols="10" class="d-flex">
-            <span>2024.12.28</span>
-          </v-col>
-        </v-row>
+          <v-row class="input-row" align="center">
+            <v-col cols="2">
+              <span>팀원</span>
+            </v-col>
+            <v-col cols="10" class="d-flex align-center">
+              <span>45명</span>
+              <v-btn class="ml-2 large" variant="outlined">팀원보기</v-btn>
+            </v-col>
+          </v-row>
 
-        <v-row class="input-row" align="center">
-          <v-col cols="2">
-            <span>팀원</span>
-          </v-col>
-          <v-col cols="10" class="d-flex align-center">
-            <span>45명</span>
-            <v-btn class="ml-2 large" variant="outlined">팀원보기</v-btn>
-          </v-col>
-        </v-row>
+          <v-row class="input-row mt-6" align="center">
+            <v-col cols="5">
+              <h3>팀원정보</h3>
+            </v-col>
+            <v-col class="d-flex justify-end pr-2" cols="2">
+              <v-select
+                label="전체"
+                :items="[
+                  'California',
+                  'Colorado',
+                  'Florida',
+                  'Georgia',
+                  'Texas',
+                  'Wyoming',
+                ]"
+                variant="outlined"
+                inline
+                hide-details
+                density="compact"
+              ></v-select>
+            </v-col>
+            <v-col cols="5" class="pl-0 d-flex">
+              <v-text-field
+                :loading="loading"
+                density="compact"
+                label="제목을 입력해주세요."
+                variant="outlined"
+                hide-details
+                single-line
+                @click:append-inner="onClick"
+              ></v-text-field>
+              <v-btn class="ml-2 large" variant="flat">검색</v-btn>
+            </v-col>
+          </v-row>
 
-        <v-row class="input-row mt-6" align="center">
-          <v-col cols="7">
-            <h3>팀원정보</h3>
-          </v-col>
-          <v-col cols="5" class="pl-0 d-flex">
-            <v-text-field
-              :loading="loading"
-              density="compact"
-              label="제목을 입력해주세요."
-              variant="outlined"
-              hide-details
-              single-line
-              @click:append-inner="onClick"
-            ></v-text-field>
-            <v-btn class="ml-2 large" variant="flat">검색</v-btn>
-          </v-col>
-        </v-row>
+          <v-card class="custom-table mt-10 mb-10">
+            <v-data-table
+              height=""
+              fixed-header
+              class="custom-table"
+              :headers="headers"
+              :items="filteredBanners"
+              :search="search"
+              hide-default-footer
+            >
+              <template v-slot:item="{ item }">
+                <tr>
+                  <td align="center">{{ item.name }}</td>
+                  <td align="center">{{ item.bannername }}</td>
+                  <td align="center">{{ item.bannerstate }}</td>
+                  <td align="center">{{ item.write }}</td>
+                  <td align="center">{{ item.count }}</td>
+                  <td align="center">{{ item.ymdt }}</td>
+                  <td align="center">
+                    <v-btn
+                      @click="handleMoveTeam(item)"
+                      class="large"
+                      variant="outlined"
+                    >
+                      팀 이관
+                    </v-btn>
+                  </td>
+                  <td align="center">
+                    <v-btn
+                      @click="handleResignTeam(item)"
+                      class="large"
+                      variant="outlined"
+                    >
+                      강제탈퇴
+                    </v-btn>
+                  </td>
+                </tr>
+              </template>
+            </v-data-table>
+          </v-card>
 
-        <v-card class="custom-table mt-10 mb-10">
-          <v-data-table
-            height=""
-            fixed-header
-            class="custom-table"
-            :headers="headers"
-            :items="filteredBanners"
-            :search="search"
-            hide-default-footer
-          ></v-data-table>
-        </v-card>
+          <v-row class="footer-row">
+            <!-- Save button on the left -->
+            <v-col class="d-flex justify-start"> </v-col>
 
-        <v-row class="footer-row">
-          <!-- Save button on the left -->
-          <v-col class="d-flex justify-start"> </v-col>
+            <!-- Pagination in the center -->
+            <v-col class="d-flex justify-center">
+              <v-pagination
+                v-model="page"
+                :length="totalPages"
+                circle
+                class="pagination"
+                color="primary"
+              ></v-pagination>
+            </v-col>
 
-          <!-- Pagination in the center -->
-          <v-col class="d-flex justify-center">
-            <v-pagination
-              v-model="page"
-              :length="totalPages"
-              circle
-              class="pagination"
-              color="primary"
-            ></v-pagination>
-          </v-col>
-
-          <!-- Register button on the right -->
-          <v-col class="d-flex justify-end">
-
-          </v-col>
-        </v-row>
-
-        
+            <!-- Register button on the right -->
+            <v-col class="d-flex justify-end"> </v-col>
+          </v-row>
+        </div>
       </v-card>
     </v-main>
   </v-app>
@@ -126,24 +169,32 @@ export default {
       options: ["배너 종류", "메인 배너", "띠 배너"],
       headers: [
         {
-          align: "start",
+          align: "center",
           key: "name",
           sortable: false,
-          title: "No",
+          title: "이름",
         },
 
-        { key: "bannername", title: "팝업명" },
-        { key: "bannerstate", title: "노출여부" },
-        { key: "write", title: "등록자" },
-        { key: "ymdt", title: "등록일시" },
+        { align: "center", key: "bannername", title: "ID", sortable: false },
+        {
+          align: "center",
+          key: "bannerstate",
+          title: "ABO/Member ID",
+          sortable: false,
+        },
+        { align: "center", key: "write", title: "닉네임", sortable: false },
+        { align: "center", key: "count", title: "인증횟수", sortable: false },
+        { align: "center", key: "ymdt", title: "팁가입일", sortable: false },
+        { align: "center", key: "moveteam", title: "팀 이관", sortable: false },
+        { align: "center", key: "resignteam", title: "탈퇴", sortable: false },
       ],
       banner: [
         {
-          name: "1",
-          bannertype: "메인 배너",
-          bannername: "밸런스 위드인 365",
-          bannerstate: "노출",
-          write: "고주영",
+          name: "고주영",
+          bannername: "8888888888",
+          bannerstate: "999999999",
+          write: "고주",
+          count: "99",
           ymdt: "2024-12-01 07:59",
         },
         {
@@ -265,17 +316,17 @@ export default {
   },
   computed: {
     filteredBanners() {
-      let filtered = this.banner;
-
-      if (this.selectedOption === "메인 배너") {
-        filtered = filtered.filter(
-          (banner) => banner.bannertype === "메인 배너"
-        );
-      } else if (this.selectedOption === "띠 배너") {
-        filtered = filtered.filter((banner) => banner.bannertype === "띠배너");
-      }
-
-      return filtered;
+      return this.banner; // 현재는 모든 배너를 반환, 필터링 로직 추가 가능
+    },
+  },
+  methods: {
+    handleMoveTeam(item) {
+      // eslint-disable-next-line no-console
+      console.log("이관:", item);
+    },
+    handleResignTeam(item) {
+      // eslint-disable-next-line no-console
+      console.log("탈퇴:", item);
     },
   },
 };

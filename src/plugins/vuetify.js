@@ -20,4 +20,12 @@ export default createVuetify({
       variant: "flat",
     },
   },
+  locale: {
+    locale: "ko",
+  },
+  date: {
+    locale: {
+      ko: "ko",
+    },
+  },
 });

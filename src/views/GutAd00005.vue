@@ -6,7 +6,7 @@
 
         <v-row class="input-row" align="center">
           <v-col cols="2">
-            <span>노출여부</span>
+            <span>노출여부 *</span>
           </v-col>
           <v-col cols="10" class="d-flex">
             <v-radio-group v-model="exposure" inline hide-details>
@@ -18,7 +18,7 @@
 
         <v-row class="input-row" align="center">
           <v-col cols="2">
-            <span>노출기간</span>
+            <span>노출기간 *</span>
           </v-col>
           <v-col cols="10" class="d-flex">
             <v-date-input
@@ -47,7 +47,7 @@
 
         <v-row class="input-row" align="center">
           <v-col cols="2">
-            <span>배너명</span>
+            <span>배너명 *</span>
           </v-col>
           <v-col cols="10" class="d-flex">
             <v-text-field
@@ -81,24 +81,18 @@
 
         <v-row class="input-row" align="center">
           <v-col cols="2">
-            <span>배너 내용</span>
+            <span>구분 *</span>
           </v-col>
           <v-col cols="10" class="d-flex">
-            <v-text-field
-              :loading="loading"
-              density="compact"
-              label="배너내용을 입력해 주세요."
-              variant="outlined"
-              hide-details
-              single-line
-              @click:append-inner="onClick"
-            ></v-text-field>
+            <v-radio-group v-model="exposure" inline hide-details>
+              <v-radio label="이미지" value="exposed"></v-radio>
+              <v-radio label="HTML" value="notExposed" class="ml-4"></v-radio>
+            </v-radio-group>
           </v-col>
         </v-row>
-
         <v-row class="input-row" align="center">
           <v-col cols="2">
-            <span>배너 이미지</span>
+            <span>배너 이미지 *</span>
           </v-col>
           <v-col cols="10" class="d-flex">
             <v-file-input
@@ -115,6 +109,22 @@
             <v-btn class="ml-2 large" variant="flat" @click="$refs.file.click()"
               >파일첨부</v-btn
             >
+          </v-col>
+        </v-row>
+        <v-row class="input-row">
+          <v-col cols="2">
+            <span>배너 내용 *</span>
+          </v-col>
+          <v-col cols="10" class="d-flex">
+            <v-textarea
+              :loading="loading"
+              density="compact"
+              label="에디터 영역"
+              variant="outlined"
+              hide-details
+              single-line
+              @click:append-inner="onClick"
+            ></v-textarea>
           </v-col>
         </v-row>
 

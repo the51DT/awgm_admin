@@ -4,12 +4,29 @@
       <v-card class="custom" flat>
         <v-card-title class="card-title">FAQ</v-card-title>
         <v-row class="input-row" align="center">
-          <v-col cols="7"></v-col>
-          <v-col cols="5" class="d-flex">
+          <v-col cols="5"> </v-col>
+          <v-col class="d-flex justify-end pr-2" cols="2">
+            <v-select
+              label="전체"
+              :items="[
+                'California',
+                'Colorado',
+                'Florida',
+                'Georgia',
+                'Texas',
+                'Wyoming',
+              ]"
+              variant="outlined"
+              inline
+              hide-details
+              density="compact"
+            ></v-select>
+          </v-col>
+          <v-col cols="5" class="pl-0 d-flex">
             <v-text-field
               :loading="loading"
               density="compact"
-              label="제목을 입력해주세요."
+              label="검색어를 입력해주세요."
               variant="outlined"
               hide-details
               single-line
@@ -34,9 +51,7 @@
         ></v-card>
         <v-row class="footer-row">
           <!-- Save button on the left -->
-          <v-col class="d-flex justify-start">
-
-          </v-col>
+          <v-col class="d-flex justify-start"> </v-col>
           <!-- Pagination in the center -->
           <v-col class="d-flex justify-center">
             <v-pagination

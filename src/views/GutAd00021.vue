@@ -164,11 +164,12 @@ export default {
           sortable: false,
           title: "No",
         },
-        { key: "bannertype", title: "배너 타입" },
-        { key: "bannername", title: "배너명" },
-        { key: "bannerstate", title: "노출여부" },
-        { key: "write", title: "등록자" },
-        { key: "ymdt", title: "등록일시" },
+        { key: "bannertype", title: "아이디" },
+        { key: "bannername", title: "이름" },
+        { key: "bannerstate", title: "닉네임" },
+        { key: "write", title: "가입일자" },
+        { key: "count", title: "인증횟수" },
+        { key: "abo", title: "ABO/Member" },
       ],
       banner: [
         {

@@ -2,17 +2,17 @@
 html,
 body,
 #app {
-  height: 100%;
   margin: 0;
+  overflow: hidden;
 }
 
 .v-application {
-  height: 100%;
 }
 
 .v-main {
   display: flex;
   flex-direction: column;
+  height: calc(100vh - 64px);
 }
 
 .scroll-container {
@@ -265,8 +265,9 @@ body,
     }
   }
   .scroll-area {
-    height: calc(100vh - 204px);
-    overflow: auto;
+    height: calc(100vh - 304px);
+    overflow-y: auto;
+    overflow-x: hidden;
     padding-bottom: 63px;
   }
 }

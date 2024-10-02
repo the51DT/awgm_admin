@@ -2,48 +2,15 @@
   <v-app>
     <v-main class="pa-10">
       <v-card class="custom" flat>
-        <v-card-title class="card-title">보상 수령 대상자</v-card-title>
+        <v-card-title class="card-title">개인정보처리방침</v-card-title>
+
         <v-row class="input-row" align="center">
-          <v-col cols="3"> </v-col>
-          <v-col class="d-flex justify-end pr-2" cols="2">
-            <v-select
-              label="챌린지 선택"
-              :items="[
-                'California',
-                'Colorado',
-                'Florida',
-                'Georgia',
-                'Texas',
-                'Wyoming',
-              ]"
-              variant="outlined"
-              inline
-              hide-details
-              density="compact"
-            ></v-select>
-          </v-col>
-          <v-col class="d-flex justify-end pr-2 pl-0" cols="2">
-            <v-select
-              label="전체"
-              :items="[
-                'California',
-                'Colorado',
-                'Florida',
-                'Georgia',
-                'Texas',
-                'Wyoming',
-              ]"
-              variant="outlined"
-              inline
-              hide-details
-              density="compact"
-            ></v-select>
-          </v-col>
-          <v-col cols="5" class="pl-0 d-flex">
+          <v-col cols="7"></v-col>
+          <v-col cols="5" class="d-flex">
             <v-text-field
               :loading="loading"
               density="compact"
-              label="제목을 입력해주세요."
+              label="검색어를 입력해주세요."
               variant="outlined"
               hide-details
               single-line
@@ -61,9 +28,17 @@
             :items="filteredBanners"
             :search="search"
             hide-default-footer
-          >
-          </v-data-table
-        ></v-card>
+            ><template v-slot:item="{ item }">
+              <tr>
+                <td>{{ item.name }}</td>
+                <td align="center">{{ item.startday }}</td>
+                <td align="center">{{ item.title }}</td>
+                <td align="center">{{ item.write }}</td>
+                <td align="center">{{ item.ymdt }}</td>
+              </tr>
+            </template>
+          </v-data-table></v-card
+        >
 
         <v-row class="footer-row">
           <!-- Save button on the left -->
@@ -92,12 +67,9 @@
 
 <script>
 export default {
-  name: "GutAd00029",
+  name: "GutAd00004",
   data() {
     return {
-      search: "",
-      selectedOption: "배너 종류",
-      options: ["배너 종류", "메인 배너", "띠 배너"],
       headers: [
         {
           align: "start",
@@ -105,130 +77,114 @@ export default {
           sortable: false,
           title: "No",
         },
-
-        { key: "bannername", title: "팝업명" },
-        { key: "bannerstate", title: "노출여부" },
-        { key: "write", title: "등록자" },
-        { key: "ymdt", title: "등록일시" },
+        { align: "center", key: "startday", title: "시행일", sortable: false },
+        { align: "center", key: "title", title: "제목", sortable: false },
+        { align: "center", key: "write", title: "등록자", sortable: false },
+        { align: "center", key: "ymdt", title: "등록일시", sortable: false },
       ],
       banner: [
         {
           name: "1",
-          bannertype: "메인 배너",
-          bannername: "밸런스 위드인 365",
-          bannerstate: "노출",
+          startday: "2025.01.01",
+          title: "밸런스 위드인 365",
           write: "고주영",
           ymdt: "2024-12-01 07:59",
         },
         {
           name: "2",
-          bannertype: "메인 배너",
-          bannername: "뉴트리 파이토 푸로틴",
-          bannerstate: "노출",
+          startday: "2025.01.01",
+          title: "밸런스 위드인 365",
           write: "고주영",
           ymdt: "2024-12-01 07:59",
         },
         {
           name: "3",
-          bannertype: "메인 배너",
-          bannername: "뉴트리 키즈 푸로틴",
-          bannerstate: "노출",
+          startday: "2025.01.01",
+          title: "밸런스 위드인 365",
           write: "고주영",
           ymdt: "2024-12-01 07:59",
         },
         {
-          name: "4",
-          bannertype: "메인 배너",
-          bannername: "12월 이벤트 첼린지 모집",
-          bannerstate: "비노출",
+          name: "1",
+          startday: "2025.01.01",
+          title: "밸런스 위드인 365",
           write: "고주영",
           ymdt: "2024-12-01 07:59",
         },
         {
-          name: "5",
-          bannertype: "띠배너",
-          bannername: 16.0,
-          bannerstate: "노출",
+          name: "2",
+          startday: "2025.01.01",
+          title: "밸런스 위드인 365",
           write: "고주영",
           ymdt: "2024-12-01 07:59",
         },
         {
-          name: "6",
-          bannertype: 375,
-          bannername: 0.0,
-          bannerstate: "노출",
+          name: "3",
+          startday: "2025.01.01",
+          title: "밸런스 위드인 365",
           write: "고주영",
           ymdt: "2024-12-01 07:59",
         },
         {
-          name: "7",
-          bannertype: 392,
-          bannername: 0.2,
-          bannerstate: "노출",
+          name: "1",
+          startday: "2025.01.01",
+          title: "밸런스 위드인 365",
           write: "고주영",
           ymdt: "2024-12-01 07:59",
         },
         {
-          name: "8",
-          bannertype: 408,
-          bannername: 3.2,
-          bannerstate: "노출",
+          name: "2",
+          startday: "2025.01.01",
+          title: "밸런스 위드인 365",
           write: "고주영",
           ymdt: "2024-12-01 07:59",
         },
         {
-          name: "9",
-          bannertype: 452,
-          bannername: 25.0,
-          bannerstate: "노출",
+          name: "3",
+          startday: "2025.01.01",
+          title: "밸런스 위드인 365",
           write: "고주영",
           ymdt: "2024-12-01 07:59",
         },
         {
-          name: "10",
-          bannertype: 518,
-          bannername: 26.0,
-          bannerstate: "노출",
+          name: "1",
+          startday: "2025.01.01",
+          title: "밸런스 위드인 365",
           write: "고주영",
           ymdt: "2024-12-01 07:59",
         },
         {
-          name: "11",
-          bannertype: 518,
-          bannername: 26.0,
-          bannerstate: "노출",
+          name: "2",
+          startday: "2025.01.01",
+          title: "밸런스 위드인 365",
           write: "고주영",
           ymdt: "2024-12-01 07:59",
         },
         {
-          name: "12",
-          bannertype: 518,
-          bannername: 26.0,
-          bannerstate: "노출",
+          name: "3",
+          startday: "2025.01.01",
+          title: "밸런스 위드인 365",
           write: "고주영",
           ymdt: "2024-12-01 07:59",
         },
         {
-          name: "13",
-          bannertype: 518,
-          bannername: 26.0,
-          bannerstate: "노출",
+          name: "1",
+          startday: "2025.01.01",
+          title: "밸런스 위드인 365",
           write: "고주영",
           ymdt: "2024-12-01 07:59",
         },
         {
-          name: "14",
-          bannertype: 518,
-          bannername: 26.0,
-          bannerstate: "노출",
+          name: "2",
+          startday: "2025.01.01",
+          title: "밸런스 위드인 365",
           write: "고주영",
           ymdt: "2024-12-01 07:59",
         },
         {
-          name: "15",
-          bannertype: 518,
-          bannername: 26.0,
-          bannerstate: "노출",
+          name: "3",
+          startday: "2025.01.01",
+          title: "밸런스 위드인 365",
           write: "고주영",
           ymdt: "2024-12-01 07:59",
         },

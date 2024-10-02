@@ -2,32 +2,28 @@
   <v-app>
     <v-main class="pa-10">
       <v-card class="custom" flat>
-        <v-card-title class="card-title">FAQ 수정</v-card-title>
+        <v-card-title class="card-title">개인정보처리방침 등록</v-card-title>
         <v-row class="input-row" align="center">
           <v-col cols="2">
-            <span>구분 *</span>
+            <span>시행일 *</span>
           </v-col>
-          <v-col class="d-flex justify-end pr-0" cols="3">
-            <v-select
-              label="첼린지"
-              :items="[
-                'California',
-                'Colorado',
-                'Florida',
-                'Georgia',
-                'Texas',
-                'Wyoming',
-              ]"
-              variant="outlined"
-              inline
-              hide-details
+          <v-col cols="4" class="d-flex">
+            <v-date-input
+              :loading="loading"
               density="compact"
-            ></v-select>
+              variant="outlined"
+              hide-details
+              single-line
+              @click:append-inner="onClick"
+              prepend-icon=""
+              append-inner-icon="$calendar"
+            ></v-date-input>
           </v-col>
         </v-row>
+
         <v-row class="input-row" align="center">
           <v-col cols="2">
-            <span>제목</span>
+            <span>제목 *</span>
           </v-col>
           <v-col cols="10" class="d-flex">
             <v-text-field
@@ -41,15 +37,16 @@
             ></v-text-field>
           </v-col>
         </v-row>
+
         <v-row class="input-row">
           <v-col cols="2">
-            <span>내용</span>
+            <span>내용 *</span>
           </v-col>
           <v-col cols="10" class="d-flex">
             <v-textarea
               :loading="loading"
               density="compact"
-              label="내용을 입력해주세요"
+              label="에디터 영역"
               variant="outlined"
               hide-details
               single-line
@@ -57,10 +54,14 @@
             ></v-textarea>
           </v-col>
         </v-row>
+
         <v-row class="footer-row">
+          <!-- Save button on the left -->
           <v-col cols="2" class="d-flex justify-start">
-            <v-btn class="large" variant="flat">삭제</v-btn>
+            <v-btn class="large" variant="flat">초기화</v-btn>
           </v-col>
+
+          <!-- Pagination in the center -->
           <v-col cols="10" class="d-flex justify-end">
             <v-btn class="large" variant="outlined">목록</v-btn>
             <v-btn class="ml-2 large" variant="flat">저장</v-btn>
@@ -73,11 +74,10 @@
 
 <script>
 export default {
-  name: "GutAd00017",
+  name: "GutAd00004",
   data() {
     return {
-      successCondition: "certification",
-      amends: "voucher",
+      exposure: "exposed",
     };
   },
 };

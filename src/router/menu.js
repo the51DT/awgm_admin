@@ -125,11 +125,11 @@ export const menuRoutes = [
         path: "/회원 목록>상세-GutAd00022",
         isCompleted: true,
       },
-      { text: "휴먼회원 관리-GutAd00023", path: "/휴먼회원 관리-GutAd00023" },
+      /* { text: "휴먼회원 관리-GutAd00023", path: "/휴먼회원 관리-GutAd00023" },
       {
         text: "휴먼회원 관리>상세-GutAd00024",
         path: "/휴먼회원 관리>상세-GutAd00024",
-      },
+      }, */
       {
         text: "접속 로그-GutAd00025",
         path: "/접속 로그-GutAd00025",
@@ -229,7 +229,7 @@ export const menuRoutes = [
       },
       {
         text: "관리자 관리>상세/수정-GutAd00052",
-        path: "/관리자 관리상세/수정-GutAd00052",
+        path: "/관리자 관리>상세/수정-GutAd00052",
         isCompleted: true,
       },
       {
@@ -244,7 +244,27 @@ export const menuRoutes = [
       },
       {
         text: "권한 관리>상세/수정-GutAd00055",
-        path: "/권한 관리상세/수정-GutAd00055",
+        path: "/권한 관리>상세/수정-GutAd00055",
+        isCompleted: true,
+      },
+      {
+        text: "개인정보처리방침-GutAd00060",
+        path: "/개인정보처리방침-GutAd00060",
+        isCompleted: true,
+      },
+      {
+        text: "개인정보처리방침>등록-GutAd00061",
+        path: "/개인정보처리방침>등록-GutAd00061",
+        isCompleted: true,
+      },
+      {
+        text: "개인정보처리방침>상세/수정-GutAd00062",
+        path: "/개인정보처리방침 관리>상세/수정-GutAd00062",
+        isCompleted: true,
+      },
+      {
+        text: "금칙어관리 등록-GutAd00063",
+        path: "/금칙어관리 등록-GutAd00063",
         isCompleted: true,
       },
     ],

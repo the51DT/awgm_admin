@@ -4,16 +4,23 @@
       <v-card class="custom" flat>
         <v-card-title class="card-title">팀관리</v-card-title>
         <v-row class="input-row" align="center">
-          <v-col cols="5">
-          </v-col>
+          <v-col cols="5"> </v-col>
           <v-col class="d-flex justify-end pr-2" cols="2">
-            <v-select 
-            label="전체"
-            :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
-            variant="outlined"
-            inline 
-            hide-details 
-            density="compact"></v-select>
+            <v-select
+              label="전체"
+              :items="[
+                'California',
+                'Colorado',
+                'Florida',
+                'Georgia',
+                'Texas',
+                'Wyoming',
+              ]"
+              variant="outlined"
+              inline
+              hide-details
+              density="compact"
+            ></v-select>
           </v-col>
           <v-col cols="5" class="pl-0 d-flex">
             <v-text-field
@@ -57,9 +64,7 @@
           </v-col>
 
           <!-- Register button on the right -->
-          <v-col class="d-flex justify-end">
-
-          </v-col>
+          <v-col class="d-flex justify-end"> </v-col>
         </v-row>
       </v-card>
     </v-main>
@@ -82,10 +87,12 @@ export default {
           title: "No",
         },
 
-        { key: "bannername", title: "팝업명" },
-        { key: "bannerstate", title: "노출여부" },
-        { key: "write", title: "등록자" },
-        { key: "ymdt", title: "등록일시" },
+        { key: "bannername", title: "챌린지명" },
+        { key: "bannerstate", title: "팀명" },
+        { key: "write", title: "팀장명" },
+        { key: "ABO", title: "ABO/Member ID" },
+        { key: "mcount", title: "팀원 수" },
+        { key: "ymdt", title: "진행여부" },
       ],
       banner: [
         {
@@ -94,7 +101,9 @@ export default {
           bannername: "밸런스 위드인 365",
           bannerstate: "노출",
           write: "고주영",
-          ymdt: "2024-12-01 07:59",
+          ABO: "77489458",
+          mcount: "45",
+          ymdt: "진행중",
         },
         {
           name: "2",
@@ -102,7 +111,9 @@ export default {
           bannername: "뉴트리 파이토 푸로틴",
           bannerstate: "노출",
           write: "고주영",
-          ymdt: "2024-12-01 07:59",
+          ABO: "77489458",
+          mcount: "45",
+          ymdt: "종료",
         },
         {
           name: "3",
