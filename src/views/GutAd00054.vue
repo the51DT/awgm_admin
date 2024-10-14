@@ -39,33 +39,40 @@
             <v-col cols="2">
               <span>권한</span>
             </v-col>
-            <v-col cols="2">
-              <v-checkbox inlin hide-details label="전체 선택"></v-checkbox>
+            <v-col cols="3" class="pl-6 d-flex"> </v-col>
+            <v-col cols="3">
+              <v-checkbox inlin hide-details label="메뉴 전체"></v-checkbox>
             </v-col>
-            <v-col cols="8">
+            <v-col cols="3" class="justify-end d-flex pa-0">
               <v-checkbox inlin hide-details label="다운로드 권한"></v-checkbox>
             </v-col>
           </v-row>
           <v-row class="input-row" align="center">
+            <v-col cols="2"></v-col>
+            <v-col cols="10" class="border-t-sm"></v-col>
+          </v-row>
+          <v-row class="input-row" align="center">
             <v-col cols="2">
               <span></span>
             </v-col>
-            <v-col cols="2" class="border pl-6 d-flex">
-              <span>메인 관리</span>
+            <v-col cols="3" class="pl-6 d-flex">
+              <h4>메인 관리</h4>
             </v-col>
-            <v-col cols="8" class="pa-0 pl-3 d-flex">
-              <v-checkbox inlin hide-details label="전체 선택"></v-checkbox>
+            <v-col cols="7" class="pa-0 pl-3 d-flex">
+              <v-checkbox inlin hide-details label="전체"></v-checkbox>
             </v-col>
           </v-row>
           <v-row class="input-row" align="center">
             <v-col cols="2">
               <span></span>
             </v-col>
-            <v-col cols="2" class="pl-6 d-flex">
-              <span>- 배너 관리</span>
+            <v-col cols="3" class="pl-10 d-flex">
+              <span>배너 관리</span>
             </v-col>
-            <v-col cols="8" class="d-flex pa-0 pl-3">
-              <v-checkbox inlin hide-details label="전체 선택"></v-checkbox>
+            <v-col cols="2" class="d-flex pa-0 pl-3">
+              <v-checkbox inlin hide-details label="전체"></v-checkbox>
+            </v-col>
+            <v-col cols="4" class="justify-end d-flex pa-0 pl-3">
               <v-checkbox inlin hide-details label="읽기"></v-checkbox>
               <v-checkbox inlin hide-details label="쓰기"></v-checkbox>
               <v-checkbox inlin hide-details label="수정"></v-checkbox>
@@ -76,11 +83,13 @@
             <v-col cols="2">
               <span></span>
             </v-col>
-            <v-col cols="2" class="pl-6 d-flex">
-              <span>- 팝업 관리</span>
+            <v-col cols="3" class="pl-10 d-flex">
+              <span>팝업 관리</span>
             </v-col>
-            <v-col cols="8" class="pa-0 pl-3 d-flex">
-              <v-checkbox inlin hide-details label="전체 선택"></v-checkbox>
+            <v-col cols="2" class="d-flex pa-0 pl-3">
+              <v-checkbox inlin hide-details label="전체"></v-checkbox>
+            </v-col>
+            <v-col cols="4" class="justify-end d-flex pa-0 pl-3">
               <v-checkbox inlin hide-details label="읽기"></v-checkbox>
               <v-checkbox inlin hide-details label="쓰기"></v-checkbox>
               <v-checkbox inlin hide-details label="수정"></v-checkbox>
@@ -91,11 +100,45 @@
             <v-col cols="2">
               <span></span>
             </v-col>
-            <v-col cols="2" class="pl-6 d-flex">
-              <span>- 것모닝 제품링크 관리</span>
+            <v-col cols="3" class="pl-10 d-flex">
+              <span>것모닝 제품링크 관리</span>
             </v-col>
-            <v-col cols="8" class="pa-0 pl-3 d-flex">
-              <v-checkbox inlin hide-details label="전체 선택"></v-checkbox>
+            <v-col cols="2" class="d-flex pa-0 pl-3">
+              <v-checkbox inlin hide-details label="전체"></v-checkbox>
+            </v-col>
+            <v-col cols="4" class="justify-end d-flex pa-0 pl-3">
+              <v-checkbox inlin hide-details label="읽기"></v-checkbox>
+              <v-checkbox inlin hide-details label="쓰기"></v-checkbox>
+              <v-checkbox inlin hide-details label="수정"></v-checkbox>
+              <v-checkbox inlin hide-details label="삭제"></v-checkbox>
+            </v-col>
+          </v-row>
+          <v-row class="input-row" align="center">
+            <v-col cols="2"></v-col>
+            <v-col cols="10" class="border-t-sm"></v-col>
+          </v-row>
+          <v-row class="input-row" align="center">
+            <v-col cols="2">
+              <span></span>
+            </v-col>
+            <v-col cols="3" class="pl-6 d-flex">
+              <h4>게시판 관리</h4>
+            </v-col>
+            <v-col cols="7" class="pa-0 pl-3 d-flex">
+              <v-checkbox inlin hide-details label="전체"></v-checkbox>
+            </v-col>
+          </v-row>
+          <v-row class="input-row" align="center">
+            <v-col cols="2">
+              <span></span>
+            </v-col>
+            <v-col cols="3" class="pl-10 d-flex">
+              <span>공지사항</span>
+            </v-col>
+            <v-col cols="2" class="d-flex pa-0 pl-3">
+              <v-checkbox inlin hide-details label="전체"></v-checkbox>
+            </v-col>
+            <v-col cols="4" class="justify-end d-flex pa-0 pl-3">
               <v-checkbox inlin hide-details label="읽기"></v-checkbox>
               <v-checkbox inlin hide-details label="쓰기"></v-checkbox>
               <v-checkbox inlin hide-details label="수정"></v-checkbox>
@@ -106,22 +149,13 @@
             <v-col cols="2">
               <span></span>
             </v-col>
-            <v-col cols="2" class="border pl-6 d-flex">
-              <span>게시판 관리</span>
+            <v-col cols="3" class="pl-10 d-flex">
+              <span>FAQ</span>
             </v-col>
-            <v-col cols="8" class="d-flex pa-0 pl-3">
-              <v-checkbox inlin hide-details label="전체 선택"></v-checkbox>
+            <v-col cols="2" class="d-flex pa-0 pl-3">
+              <v-checkbox inlin hide-details label="전체"></v-checkbox>
             </v-col>
-          </v-row>
-          <v-row class="input-row" align="center">
-            <v-col cols="2">
-              <span></span>
-            </v-col>
-            <v-col cols="2" class="pl-6 d-flex">
-              <span>- 공지사항</span>
-            </v-col>
-            <v-col cols="8" class="pa-0 pl-3 d-flex">
-              <v-checkbox inlin hide-details label="전체 선택"></v-checkbox>
+            <v-col cols="4" class="justify-end d-flex pa-0 pl-3">
               <v-checkbox inlin hide-details label="읽기"></v-checkbox>
               <v-checkbox inlin hide-details label="쓰기"></v-checkbox>
               <v-checkbox inlin hide-details label="수정"></v-checkbox>
@@ -132,11 +166,45 @@
             <v-col cols="2">
               <span></span>
             </v-col>
-            <v-col cols="2" class="pl-6 d-flex">
-              <span>- FAQ</span>
+            <v-col cols="3" class="pl-10 d-flex">
+              <span>C/S 소통 게시판</span>
             </v-col>
-            <v-col cols="8" class="pa-0 pl-3 d-flex">
-              <v-checkbox inlin hide-details label="전체 선택"></v-checkbox>
+            <v-col cols="2" class="d-flex pa-0 pl-3">
+              <v-checkbox inlin hide-details label="전체"></v-checkbox>
+            </v-col>
+            <v-col cols="4" class="justify-end d-flex pa-0 pl-3">
+              <v-checkbox inlin hide-details label="읽기"></v-checkbox>
+              <v-checkbox inlin hide-details label="쓰기"></v-checkbox>
+              <v-checkbox inlin hide-details label="수정"></v-checkbox>
+              <v-checkbox inlin hide-details label="삭제"></v-checkbox>
+            </v-col>
+          </v-row>
+          <v-row class="input-row" align="center">
+            <v-col cols="2"></v-col>
+            <v-col cols="10" class="border-t-sm"></v-col>
+          </v-row>
+          <v-row class="input-row" align="center">
+            <v-col cols="2">
+              <span></span>
+            </v-col>
+            <v-col cols="3" class="pl-6 d-flex">
+              <h4>회원 관리</h4>
+            </v-col>
+            <v-col cols="7" class="pa-0 pl-3 d-flex">
+              <v-checkbox inlin hide-details label="전체"></v-checkbox>
+            </v-col>
+          </v-row>
+          <v-row class="input-row" align="center">
+            <v-col cols="2">
+              <span></span>
+            </v-col>
+            <v-col cols="3" class="pl-10 d-flex">
+              <span>회원 목록</span>
+            </v-col>
+            <v-col cols="2" class="d-flex pa-0 pl-3">
+              <v-checkbox inlin hide-details label="전체"></v-checkbox>
+            </v-col>
+            <v-col cols="4" class="justify-end d-flex pa-0 pl-3">
               <v-checkbox inlin hide-details label="읽기"></v-checkbox>
               <v-checkbox inlin hide-details label="쓰기"></v-checkbox>
               <v-checkbox inlin hide-details label="수정"></v-checkbox>
@@ -147,11 +215,13 @@
             <v-col cols="2">
               <span></span>
             </v-col>
-            <v-col cols="2" class="pl-6 d-flex">
-              <span>- C/S 소통 게시판</span>
+            <v-col cols="3" class="pl-10 d-flex">
+              <span>휴먼회원 목록</span>
             </v-col>
-            <v-col cols="8" class="pa-0 pl-3 d-flex">
-              <v-checkbox inlin hide-details label="전체 선택"></v-checkbox>
+            <v-col cols="2" class="d-flex pa-0 pl-3">
+              <v-checkbox inlin hide-details label="전체"></v-checkbox>
+            </v-col>
+            <v-col cols="4" class="justify-end d-flex pa-0 pl-3">
               <v-checkbox inlin hide-details label="읽기"></v-checkbox>
               <v-checkbox inlin hide-details label="쓰기"></v-checkbox>
               <v-checkbox inlin hide-details label="수정"></v-checkbox>
@@ -162,52 +232,13 @@
             <v-col cols="2">
               <span></span>
             </v-col>
-            <v-col cols="2" class="border pl-6 d-flex">
-              <span>회원 관리</span>
+            <v-col cols="3" class="pl-10 d-flex">
+              <span>접속 로그</span>
             </v-col>
-            <v-col cols="8" class="pa-0 pl-3 d-flex">
-              <v-checkbox inlin hide-details label="전체 선택"></v-checkbox>
+            <v-col cols="2" class="d-flex pa-0 pl-3">
+              <v-checkbox inlin hide-details label="전체"></v-checkbox>
             </v-col>
-          </v-row>
-          <v-row class="input-row" align="center">
-            <v-col cols="2">
-              <span></span>
-            </v-col>
-            <v-col cols="2" class="pl-6 d-flex">
-              <span>- 회원 목록</span>
-            </v-col>
-            <v-col cols="8" class="pa-0 pl-3 d-flex">
-              <v-checkbox inlin hide-details label="전체 선택"></v-checkbox>
-              <v-checkbox inlin hide-details label="읽기"></v-checkbox>
-              <v-checkbox inlin hide-details label="쓰기"></v-checkbox>
-              <v-checkbox inlin hide-details label="수정"></v-checkbox>
-              <v-checkbox inlin hide-details label="삭제"></v-checkbox>
-            </v-col>
-          </v-row>
-          <v-row class="input-row" align="center">
-            <v-col cols="2">
-              <span></span>
-            </v-col>
-            <v-col cols="2" class="pl-6 d-flex">
-              <span>- 휴먼회원 목록</span>
-            </v-col>
-            <v-col cols="8" class="pa-0 pl-3 d-flex">
-              <v-checkbox inlin hide-details label="전체 선택"></v-checkbox>
-              <v-checkbox inlin hide-details label="읽기"></v-checkbox>
-              <v-checkbox inlin hide-details label="쓰기"></v-checkbox>
-              <v-checkbox inlin hide-details label="수정"></v-checkbox>
-              <v-checkbox inlin hide-details label="삭제"></v-checkbox>
-            </v-col>
-          </v-row>
-          <v-row class="input-row" align="center">
-            <v-col cols="2">
-              <span></span>
-            </v-col>
-            <v-col cols="2" class="pl-6 d-flex">
-              <span>- 접속 로그</span>
-            </v-col>
-            <v-col cols="8" class="pa-0 pl-3 d-flex">
-              <v-checkbox inlin hide-details label="전체 선택"></v-checkbox>
+            <v-col cols="4" class="justify-end d-flex pa-0 pl-3">
               <v-checkbox inlin hide-details label="읽기"></v-checkbox>
               <v-checkbox inlin hide-details label="쓰기"></v-checkbox>
               <v-checkbox inlin hide-details label="수정"></v-checkbox>
