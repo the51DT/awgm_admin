@@ -4,7 +4,7 @@
       <v-card class="custom" flat>
         <v-card-title class="card-title">FAQ</v-card-title>
         <v-row class="input-row" align="center">
-          <v-col cols="5"> </v-col>
+          <v-col cols="5"> <BoardCurrent /></v-col>
           <v-col class="d-flex justify-end pr-2" cols="2">
             <v-select
               label="전체"
@@ -73,7 +73,11 @@
 </template>
 
 <script>
+import BoardCurrent from "@/components/BoardCurrent.vue";
 export default {
+  components: {
+    BoardCurrent,
+  },
   data() {
     return {
       search: "",
