@@ -59,8 +59,59 @@
             :search="search"
             hide-default-footer
           >
-          </v-data-table
-        ></v-card>
+            <template v-slot:item="{ item }">
+              <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.bannername }}</td>
+                <td>{{ item.bannerstate }}</td>
+                <td>{{ item.write }}</td>
+                <td>{{ item.ymdt }}</td>
+                <td>
+                  <v-dialog
+                    transition="dialog-bottom-transition"
+                    width="auto"
+                  >
+                    <template v-slot:activator="{ props: activatorProps }">
+                      <v-btn
+                        v-bind="activatorProps"
+                        text="사진보기"
+                        class="large"
+                        variant="outlined"
+                      ></v-btn>
+                    </template>
+
+                    <template v-slot:default="{ isActive }">
+                      <v-card
+                        width="700"
+                        max-width="100%"
+                      >
+                        <v-toolbar>
+                          <v-toolbar-title>{{ item.ymdt }}</v-toolbar-title>
+                        </v-toolbar>
+
+                        <v-card-text class="text-h2 pa-12">
+                          <v-img
+                            height="600"
+                            width="600"
+                            src="https://placehold.co/600x400/orange/white?text=img"
+                            cover
+                          ></v-img>
+                        </v-card-text>
+
+                        <v-card-actions class="justify-end">
+                          <v-btn
+                            text="닫기"
+                            @click="isActive.value = false"
+                          ></v-btn>
+                        </v-card-actions>
+                      </v-card>
+                    </template>
+                  </v-dialog>
+                </td>
+              </tr>
+            </template>
+          </v-data-table>
+        </v-card>
 
         <v-row class="footer-row">
           <!-- Save button on the left -->
@@ -107,6 +158,7 @@ export default {
         { key: "bannerstate", title: "노출여부" },
         { key: "write", title: "등록자" },
         { key: "ymdt", title: "등록일시" },
+        { key: "imgview", title: "인증사진" },
       ],
       banner: [
         {
@@ -123,7 +175,7 @@ export default {
           bannername: "뉴트리 파이토 푸로틴",
           bannerstate: "노출",
           write: "고주영",
-          ymdt: "2024-12-01 07:59",
+          ymdt: "2024-12-01 08:59",
         },
         {
           name: "3",
