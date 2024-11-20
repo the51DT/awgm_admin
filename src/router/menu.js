@@ -203,11 +203,7 @@ export const menuRoutes = [
   {
     text: "통계 관리",
     subMenu: [
-      { text: "통계-GutAd00037", path: "/통계-GutAd00037" },
-      {
-        text: "기간별 참여자의 미션이력정보-GutAd00038",
-        path: "/기간별 참여자의 미션이력정보-GutAd00038",
-      },
+      { text: "통계-GutAd00037", path: "/통계-GutAd00037", isCompleted: true },
     ],
   },
   {
@@ -245,6 +241,16 @@ export const menuRoutes = [
       {
         text: "권한 관리>상세/수정-GutAd00055",
         path: "/권한 관리>상세/수정-GutAd00055",
+        isCompleted: true,
+      },
+      {
+        text: "시스템 관리>코드관리-GutAd00056",
+        path: "/시스템 관리>코드관리-GutAd00056",
+        isCompleted: true,
+      },
+      {
+        text: "시스템 관리>코드관리-GutAd00057",
+        path: "/시스템 관리>코드관리-GutAd00057",
         isCompleted: true,
       },
       {
