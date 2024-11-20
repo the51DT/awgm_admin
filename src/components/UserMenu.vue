@@ -1,6 +1,6 @@
 <!-- src/components/UserMenu.vue -->
 <template>
-  <span class="mr-2">유효시간 00:00 | </span>
+  <span class="mr-2 timer">유효시간 00:00 | </span>
 </template>
 
 <script setup>
@@ -14,6 +14,4 @@ const handleClick = (action) => {
 };
 </script>
 
-<style scoped>
-/* 스타일링 */
-</style>
+<style scoped></style>

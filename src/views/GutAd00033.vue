@@ -5,57 +5,90 @@
         <v-card-title class="card-title">팀관리</v-card-title>
         <div class="scroll-area">
           <v-row class="input-row" align="center">
-            <v-col cols="2">
-              <span>챌린지명</span>
+            <v-col cols="3">
+              <strong>챌린지 타입</strong>
             </v-col>
-            <v-col cols="10" class="d-flex">
-              <span>상시챌린지</span>
+            <v-col cols="3" class="d-flex">
+              <span>챌린지</span>
             </v-col>
-          </v-row>
-
-          <v-row class="input-row" align="center">
-            <v-col cols="2">
-              <span>팀명</span>
+            <v-col cols="3">
+              <strong>생성일</strong>
             </v-col>
-            <v-col cols="10" class="d-flex">
-              <span>25년 1월 것모닝 챌린지</span>
-            </v-col>
-          </v-row>
-
-          <v-row class="input-row" align="center">
-            <v-col cols="2">
-              <span>팀장명 / ID(ABO) / 닉네임</span>
-            </v-col>
-            <v-col cols="10" class="d-flex">
-              <span>고주영 / 389237482(77849458) / 고주</span>
-            </v-col>
-          </v-row>
-
-          <v-row class="input-row" align="center">
-            <v-col cols="2">
-              <span>시작일 / 종료일</span>
-            </v-col>
-            <v-col cols="10" class="d-flex">
-              <span>2025.01.01 ~ 2025.02.28</span>
-            </v-col>
-          </v-row>
-
-          <v-row class="input-row" align="center">
-            <v-col cols="2">
-              <span>생성일</span>
-            </v-col>
-            <v-col cols="10" class="d-flex">
+            <v-col cols="3" class="d-flex">
               <span>2024.12.28</span>
             </v-col>
           </v-row>
-
           <v-row class="input-row" align="center">
-            <v-col cols="2">
-              <span>팀원</span>
+            <v-col cols="3">
+              <strong>챌린지명</strong>
             </v-col>
-            <v-col cols="10" class="d-flex align-center">
+            <v-col cols="3" class="d-flex">
+              <span>25년 1월 것모닝 챌린지</span>
+            </v-col>
+            <v-col cols="3">
+              <strong>팀원</strong>
+            </v-col>
+            <v-col cols="1" class="d-flex">
               <span>45명</span>
+            </v-col>
+            <v-col cols="2" class="d-flex">
               <v-btn class="ml-2 large" variant="outlined">팀원보기</v-btn>
+            </v-col>
+          </v-row>
+          <v-row class="input-row" align="center">
+            <v-col cols="3">
+              <strong>팀명</strong>
+            </v-col>
+            <v-col cols="3" class="d-flex">
+              <span>웨이웨이 것모닝</span>
+            </v-col>
+            <v-col cols="3">
+              <strong>성공조건 </strong>
+            </v-col>
+            <v-col cols="3" class="d-flex">
+              <span>80% (인증횟수 300회 이상)</span>
+            </v-col>
+          </v-row>
+          <v-row class="input-row" align="center">
+            <v-col cols="3">
+              <strong>팀장명 / ID(ABO) / 닉네임</strong>
+            </v-col>
+            <v-col cols="3" class="d-flex">
+              <span>웨이웨이 것모닝</span>
+            </v-col>
+            <v-col cols="3">
+              <strong>성공보상 / 보상명 </strong>
+            </v-col>
+            <v-col cols="3" class="d-flex">
+              <span>$ABC수령$ $보상명$</span>
+            </v-col>
+          </v-row>
+          <v-row class="input-row" align="center">
+            <v-col cols="3">
+              <strong>챌린지 기간</strong>
+            </v-col>
+            <v-col cols="3" class="d-flex">
+              <span>2025.01.01 ~ 2025.02.28</span>
+            </v-col>
+            <v-col cols="3">
+              <strong>보상수령방법</strong>
+            </v-col>
+            <v-col cols="3" class="d-flex">
+              <span>팀장이 수령</span>
+            </v-col>
+          </v-row>
+          <v-row class="input-row" align="center">
+            <v-col cols="3">
+              <strong>팀 인증률</strong>
+            </v-col>
+            <v-col cols="3" class="d-flex">
+              <span>전체 75% (89%, 76%, 97%)</span>
+            </v-col>
+            <v-col cols="3">
+              <strong>보상수령처</strong>
+            </v-col>
+            <v-col cols="3" class="d-flex">
+              <span>분당</span>
             </v-col>
           </v-row>
 
@@ -112,15 +145,7 @@
                   <td align="center">{{ item.write }}</td>
                   <td align="center">{{ item.count }}</td>
                   <td align="center">{{ item.ymdt }}</td>
-                  <td align="center">
-                    <v-btn
-                      @click="handleMoveTeam(item)"
-                      class="large"
-                      variant="outlined"
-                    >
-                      팀 이관
-                    </v-btn>
-                  </td>
+
                   <td align="center">
                     <v-btn
                       @click="handleResignTeam(item)"
@@ -185,7 +210,7 @@ export default {
         { align: "center", key: "write", title: "닉네임", sortable: false },
         { align: "center", key: "count", title: "인증횟수", sortable: false },
         { align: "center", key: "ymdt", title: "팁가입일", sortable: false },
-        { align: "center", key: "moveteam", title: "팀 이관", sortable: false },
+
         { align: "center", key: "resignteam", title: "탈퇴", sortable: false },
       ],
       banner: [
