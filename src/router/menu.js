@@ -248,11 +248,7 @@ export const menuRoutes = [
         path: "/시스템 관리>코드관리-GutAd00056",
         isCompleted: true,
       },
-      {
-        text: "시스템 관리>코드관리-GutAd00057",
-        path: "/시스템 관리>코드관리-GutAd00057",
-        isCompleted: true,
-      },
+
       {
         text: "개인정보처리방침-GutAd00060",
         path: "/개인정보처리방침-GutAd00060",
