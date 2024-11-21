@@ -5,7 +5,13 @@ body,
   margin: 0;
   overflow: hidden;
 }
-
+.v-app-bar {
+  background: #3f4d66 !important;
+  .timer,
+  .v-toolbar-title {
+    color: #fff;
+  }
+}
 .v-main {
   display: flex;
   flex-direction: column;
@@ -15,6 +21,13 @@ body,
   }
 }
 
+.v-btn {
+  margin-left: 8px;
+}
+
+.v-icon {
+  font-size: 20px;
+}
 .scroll-container {
   flex: 1;
 }
@@ -297,4 +310,57 @@ body,
     overflow-x: hidden;
     padding-bottom: 63px;
   }
+}
+.draggable-item {
+  cursor: move;
+  padding: 10px;
+  margin-bottom: 4px;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-indent: -10000px;
+  overflow: hidden;
+}
+.draggable-item:hover {
+}
+.v-treeview .v-list-item-action .v-btn {
+  margin-left: -6px;
+}
+.drop-line {
+  height: 6px;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+  margin: 8px 0;
+  border-radius: 3px;
+}
+
+.drop-line.drop-allowed {
+  background-color: #e8f5e9;
+}
+
+.invisible-drop-area {
+  height: 10px;
+  background-color: transparent;
+}
+
+.invisible-drop-area.drop-allowed {
+  background-color: #e8f5e9;
+}
+
+.not-allowed {
+  cursor: not-allowed;
+  border: 2px dashed #f44336;
+  background-color: #ffebee;
+}
+
+.drop-allowed {
+  border: 2px dashed #4caf50;
+}
+.white {
+  color: #fff;
+}
+.red {
+  color: #f44336;
 }
