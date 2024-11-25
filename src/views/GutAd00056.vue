@@ -166,7 +166,18 @@ const items = ref([
     children: [
       {
         title: "static",
-        children: [{ title: "logo.png" }],
+        children: [
+          {
+            title: "logo.png",
+            children: [
+              {
+                title: "11111",
+                children: [{ title: "11111-1" }, { title: "11111-2" }],
+              },
+              { title: "222222" },
+            ],
+          },
+        ],
       },
       { title: "favicon.ico" },
       { title: "index.html" },
