@@ -176,11 +176,11 @@ const items = ref([
     title: "public1",
     children: [
       {
-        title: "static",
-        children: [{ title: "logo.png" }],
+        title: "static1",
+        children: [{ title: "logo.png1" }],
       },
-      { title: "favicon.ico" },
-      { title: "index.html" },
+      { title: "favicon.ico1" },
+      { title: "index.html1" },
     ],
   },
   { title: ".gitignore" },

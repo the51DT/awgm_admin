@@ -312,7 +312,7 @@ body,
   }
 }
 .draggable-item {
-  cursor: move;
+  cursor: default;
   padding: 10px;
   margin-bottom: 4px;
   border: 1px solid transparent;
@@ -358,6 +358,7 @@ body,
 .drop-allowed {
   border: 2px dashed #4caf50;
 }
+
 .white {
   color: #fff;
 }
