@@ -39,7 +39,17 @@
               density="compact"
             ></v-select>
           </v-col>
-          <v-col cols="5" class="pl-0 d-flex">
+          <v-col class="d-flex justify-end pr-2 pl-0" cols="1">
+            <v-select
+              label="전체"
+              :items="['성공', '실패']"
+              variant="outlined"
+              inline
+              hide-details
+              density="compact"
+            ></v-select>
+          </v-col>
+          <v-col cols="4" class="pl-0 d-flex">
             <v-text-field
               :loading="loading"
               density="compact"
@@ -62,8 +72,27 @@
             :search="search"
             hide-default-footer
           >
-          </v-data-table
-        ></v-card>
+            <template v-slot:item="{ item }">
+              <tr>
+                <td align="center">{{ item.num }}</td>
+                <td align="center">{{ item.name }}</td>
+                <td align="center">{{ item.nickname }}</td>
+                <td align="center">{{ item.id }}</td>
+                <td align="center">{{ item.cgname }}</td>
+                <td align="center">{{ item.scgname }}</td>
+                <td align="center">{{ item.teamname }}</td>
+                <td align="center">{{ item.teamnid }}</td>
+                <td align="center">{{ item.sba }}</td>
+                <td align="center">{{ item.method }}</td>
+                <td align="center">{{ item.syn }}</td>
+                <td>
+                  {{ item.ck }}
+                  <v-checkbox inlin hide-details label=""></v-checkbox>
+                </td>
+              </tr>
+            </template>
+          </v-data-table>
+        </v-card>
 
         <v-row class="footer-row">
           <!-- Save button on the left -->
@@ -96,29 +125,56 @@ export default {
   data() {
     return {
       search: "",
-      selectedOption: "배너 종류",
-      options: ["배너 종류", "메인 배너", "띠 배너"],
       headers: [
         {
-          align: "start",
-          key: "name",
+          align: "center",
+          key: "num",
           sortable: false,
-          title: "No",
+          title: "NO",
         },
 
-        { key: "bannername", title: "팝업명" },
-        { key: "bannerstate", title: "노출여부" },
-        { key: "write", title: "등록자" },
-        { key: "ymdt", title: "등록일시" },
+        { align: "center", key: "name", title: "이름", sortable: false },
+        {
+          align: "center",
+          key: "nicknmae",
+          title: "닉네임",
+          sortable: false,
+        },
+        { align: "center", key: "id", title: "ID(ABO ID)", sortable: false },
+        { align: "center", key: "cgname", title: "챌린지명", sortable: false },
+        {
+          align: "center",
+          key: "scgnmae",
+          title: "서브 챌린지명",
+          sortable: false,
+        },
+
+        { align: "center", key: "teamname", title: "팀명", sortable: false },
+        {
+          align: "center",
+          key: "teamid",
+          title: "팀장ID(ABO ID)",
+          sortable: false,
+        },
+        { align: "center", key: "sba", title: "성공보상", sortable: false },
+        { align: "center", key: "method", title: "수령방법", sortable: false },
+        { align: "center", key: "syn", title: "성공여부", sortable: false },
+        { align: "center", key: "ck", title: "수령확인", sortable: false },
       ],
       banner: [
         {
-          name: "1",
-          bannertype: "메인 배너",
-          bannername: "밸런스 위드인 365",
-          bannerstate: "노출",
-          write: "고주영",
-          ymdt: "2024-12-01 07:59",
+          num: "1",
+          name: "고주영",
+          nickname: "고주",
+          id: "999999999(9999999)",
+          cgname: "25년 1월 것모닝 챌린지",
+          scgname: "2024-12-01 07:59",
+          teamname: "25년 1월 것모닝 1팀",
+          teamid: "ss",
+          sba: "바우처",
+          method: "팀장수령",
+          syn: "성공",
+          ck: "",
         },
         {
           name: "2",
