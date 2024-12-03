@@ -311,19 +311,47 @@ body,
     padding-bottom: 63px;
   }
 }
-.draggable-item {
-  cursor: default;
-  padding: 10px;
-  margin-bottom: 4px;
-  border: 1px solid transparent;
-  transition: background-color 0.2s ease;
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-indent: -10000px;
-  overflow: hidden;
-}
-.draggable-item:hover {
+.v-treeview {
+  max-height: 600px;
+  overflow: auto;
+
+  .v-treeview-node {
+    &__root {
+      min-height: 32px;
+    }
+
+    .draggable-item {
+      cursor: move;
+      padding: 4px;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+    }
+
+    .drop-allowed {
+      background-color: rgba(25, 118, 210, 0.12);
+    }
+
+    .not-allowed {
+      cursor: not-allowed;
+    }
+
+    &[aria-selected='true'] {
+      & > .v-treeview-node__root {
+        background-color: rgba(var(--v-theme-primary), 0.2) !important;
+      }
+
+      & .v-treeview-node__root {
+        background-color: rgba(var(--v-theme-primary), 0.1) !important;
+      }
+    }
+  }
+
+  .invisible-drop-area {
+    min-height: 20px;
+  }
 }
 .v-treeview .v-list-item-action .v-btn {
   margin-left: -6px;
@@ -364,4 +392,7 @@ body,
 }
 .red {
   color: #f44336;
+}
+.v-list-item-action {
+  z-index: 1000;
 }

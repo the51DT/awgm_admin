@@ -8,11 +8,14 @@
             <v-col cols="4">
               <v-sheet border="sm">
                 <v-treeview
+                  v-model="selected"
                   :items="items"
                   :opened="initiallyOpen"
                   item-value="title"
                   activatable
-                  open-on-click
+                  return-object
+                  :open-on-click="false"
+                  @update:modelValue="handleSelection"
                 >
                   <template v-slot:prepend="{ item }">
                     <div
@@ -22,6 +25,7 @@
                       @dragover.prevent="onDragOver($event, item)"
                       @dragleave="onDragLeave($event)"
                       @drop="onDrop($event, item)"
+                      @click="handleClick(item)"
                     >
                       {{ item.title }}
                     </div>
@@ -30,6 +34,9 @@
                       @dragover.prevent="onDragOverLine($event, item)"
                       @drop="onDropBetweenItems($event, item)"
                     ></div>
+                  </template>
+                  <template v-slot:label>
+                    <!-- 빈 템플릿으로 기본 라벨 숨김 -->
                   </template>
                 </v-treeview>
                 <div
@@ -157,7 +164,9 @@
 <script setup>
 import { ref } from "vue";
 
+const selected = ref([]);
 const initiallyOpen = ref(["public"]);
+const activeItems = ref([]);
 const items = ref([
   { title: ".git" },
   { title: "node_modules" },
@@ -336,5 +345,81 @@ const removeDropIndicators = (event) => {
   if (event && event.target) {
     event.target.classList.remove("drop-allowed", "not-allowed");
   }
+};
+
+const handleOpen = (openedItems) => {
+  activeItems.value = [];
+  openedItems.forEach((itemTitle) => {
+    const item = findItemByTitle(items.value, itemTitle);
+    if (item) {
+      activeItems.value.push(item);
+      if (item.children) {
+        getAllChildren(item).forEach((child) => {
+          activeItems.value.push(child);
+        });
+      }
+    }
+  });
+};
+
+const findItemByTitle = (items, title) => {
+  for (const item of items) {
+    if (item.title === title) return item;
+    if (item.children) {
+      const found = findItemByTitle(item.children, title);
+      if (found) return found;
+    }
+  }
+  return null;
+};
+
+const getAllChildren = (item) => {
+  let children = [];
+  if (item.children) {
+    children = [...item.children];
+    item.children.forEach((child) => {
+      if (child.children) {
+        children = [...children, ...getAllChildren(child)];
+      }
+    });
+  }
+  return children;
+};
+
+const handleClick = (item) => {
+  selected.value = [item];
+  if (item.children) {
+    const index = initiallyOpen.value.indexOf(item.title);
+    if (index === -1) {
+      initiallyOpen.value.push(item.title);
+    } else {
+      initiallyOpen.value.splice(index, 1);
+    }
+  }
+};
+
+const handleSelection = (newSelected) => {
+  if (!newSelected.length) return;
+
+  const lastSelected = newSelected[newSelected.length - 1];
+  const parents = findParents(items.value, lastSelected);
+
+  selected.value = [
+    ...new Set([...newSelected, ...parents.map((item) => item.title)]),
+  ];
+};
+
+const findParents = (items, targetItem, path = []) => {
+  for (const item of items) {
+    if (item.title === targetItem) {
+      return path;
+    }
+    if (item.children) {
+      const newPath = [...path, item];
+      const result = findParents(item.children, targetItem, newPath);
+      if (result) return result;
+    }
+  }
+  return [];
 };
 </script>
