@@ -311,9 +311,9 @@ body,
     padding-bottom: 63px;
   }
 }
+
 .v-treeview {
   max-height: 600px;
-  overflow: auto;
 
   .v-treeview-node {
     &__root {
@@ -321,9 +321,16 @@ body,
     }
 
     .draggable-item {
-      cursor: move;
-      padding: 4px;
-      border-radius: 4px;
+      cursor: default;
+      padding: 10px;
+      margin-bottom: 4px;
+      border: 1px solid transparent;
+      transition: background-color 0.2s ease;
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-indent: -10000px;
+      overflow: hidden;
 
       &:hover {
         background-color: rgba(0, 0, 0, 0.04);
@@ -342,8 +349,10 @@ body,
       & > .v-treeview-node__root {
         background-color: rgba(var(--v-theme-primary), 0.2) !important;
       }
+    }
 
-      & .v-treeview-node__root {
+    &[aria-expanded='true'] {
+      & > .v-treeview-node__root {
         background-color: rgba(var(--v-theme-primary), 0.1) !important;
       }
     }
@@ -372,7 +381,12 @@ body,
   height: 20px;
   background-color: transparent;
 }
-
+.v-list-group:hover {
+  background: #dbdbdb;
+}
+.v-list-item-action {
+  z-index: 1000;
+}
 .invisible-drop-area.drop-allowed {
   background-color: #e8f5e9;
 }
@@ -392,7 +406,4 @@ body,
 }
 .red {
   color: #f44336;
-}
-.v-list-item-action {
-  z-index: 1000;
 }
