@@ -314,27 +314,25 @@ body,
 
 .v-treeview {
   max-height: 600px;
+  .draggable-item {
+    cursor: default;
+    padding: 10px;
+    margin-bottom: 4px;
+    border: 1px solid transparent;
+    transition: background-color 0.2s ease;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-indent: -10000px;
+    overflow: hidden;
 
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+  }
   .v-treeview-node {
     &__root {
       min-height: 32px;
-    }
-
-    .draggable-item {
-      cursor: default;
-      padding: 10px;
-      margin-bottom: 4px;
-      border: 1px solid transparent;
-      transition: background-color 0.2s ease;
-      position: absolute;
-      left: 0;
-      right: 0;
-      text-indent: -10000px;
-      overflow: hidden;
-
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.04);
-      }
     }
 
     .drop-allowed {
@@ -361,44 +359,43 @@ body,
   .invisible-drop-area {
     min-height: 20px;
   }
-}
-.v-treeview .v-list-item-action .v-btn {
-  margin-left: -6px;
-}
-.drop-line {
-  height: 6px;
-  background-color: transparent;
-  transition: background-color 0.2s ease;
-  margin: 8px 0;
-  border-radius: 3px;
-}
+  .v-list-item-action .v-btn {
+    margin-left: -6px;
+  }
+  .drop-line {
+    height: 6px;
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+    margin: 8px 0;
+    border-radius: 3px;
+  }
+  .drop-line.drop-allowed {
+    background-color: #e8f5e9;
+  }
 
-.drop-line.drop-allowed {
-  background-color: #e8f5e9;
-}
+  .invisible-drop-area {
+    height: 20px;
+    background-color: transparent;
+  }
+  .v-list-group:hover {
+    background: #eee;
+  }
+  .v-list-item-action {
+    z-index: 1000;
+  }
+  .invisible-drop-area.drop-allowed {
+    background-color: #e8f5e9;
+  }
 
-.invisible-drop-area {
-  height: 20px;
-  background-color: transparent;
-}
-.v-list-group:hover {
-  background: #dbdbdb;
-}
-.v-list-item-action {
-  z-index: 1000;
-}
-.invisible-drop-area.drop-allowed {
-  background-color: #e8f5e9;
-}
+  .not-allowed {
+    cursor: not-allowed;
+    border: 2px dashed #f44336;
+    background-color: #ffebee;
+  }
 
-.not-allowed {
-  cursor: not-allowed;
-  border: 2px dashed #f44336;
-  background-color: #ffebee;
-}
-
-.drop-allowed {
-  border: 2px dashed #4caf50;
+  .drop-allowed {
+    border: 2px dashed #4caf50;
+  }
 }
 
 .white {
