@@ -14,7 +14,13 @@ export const menuRoutes = [
   },
   {
     text: "메인",
-    subMenu: [{ text: "dashboard-GutAd00002", path: "/dashboard-GutAd00002" }],
+    subMenu: [
+      {
+        text: "dashboard-GutAd00002",
+        path: "/dashboard-GutAd00002",
+        isCompleted: true,
+      },
+    ],
   },
   {
     text: "메인 관리",
@@ -160,14 +166,14 @@ export const menuRoutes = [
         path: "/보상수령대상자-GutAd00029",
         isCompleted: true,
       },
-      {
+      /* {
         text: "보상수령대상자>등록-GutAd00030",
         path: "/보상수령대상자>등록-GutAd00030",
       },
       {
         text: "보상수령대상자>상세/수정-GutAd00031",
         path: "/보상수령대상자>상세/수정-GutAd00031",
-      },
+      }, */
       {
         text: "팀관리-GutAd00032",
         path: "/팀관리-GutAd00032",
@@ -205,10 +211,6 @@ export const menuRoutes = [
     subMenu: [
       { text: "통계-GutAd00037", path: "/통계-GutAd00037", isCompleted: true },
     ],
-  },
-  {
-    text: "카메라",
-    subMenu: [{ text: "통계-GutAd00045", path: "/통계-GutAd00045" }],
   },
   {
     text: "시스템 관리",

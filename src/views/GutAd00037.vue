@@ -353,7 +353,7 @@ export default {
           },
           {
             label: "인증현황",
-            backgroundColor: "#3CA877",
+            backgroundColor: "#4B7BE5",
 
             data: [
               3000, 5000, 8000, 9000, 9500, 10000, 12000, 13000, 15000, 24000,

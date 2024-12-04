@@ -1,16 +1,16 @@
 <template>
-  <div>
+  <div class="chart-container">
     <component
       :is="chartComponent"
       :id="chartId"
-      :options="chartOptions"
+      :options="chartOptionsWithResponsive"
       :data="chartData"
     />
   </div>
 </template>
 
 <script>
-import { Bar, Line, Pie } from "vue-chartjs";
+import { Bar, Line as LineChart, Pie } from "vue-chartjs";
 import {
   Chart as ChartJS,
   Title,
@@ -38,12 +38,15 @@ ChartJS.register(
 
 export default {
   name: "DynamicChart",
-  // eslint-disable-next-line vue/no-reserved-component-names
-  components: { Bar, Line, Pie },
+  components: {
+    Bar,
+    LineChart,
+    Pie,
+  },
   props: {
     chartType: {
       type: String,
-      default: "bar", // 기본은 bar 차트
+      default: "bar",
     },
     chartId: {
       type: String,
@@ -62,13 +65,42 @@ export default {
     chartComponent() {
       switch (this.chartType) {
         case "line":
-          return Line;
+          return LineChart;
         case "pie":
           return Pie;
         default:
           return Bar;
       }
     },
+    chartOptionsWithResponsive() {
+      return {
+        ...this.chartOptions,
+        responsive: true,
+        maintainAspectRatio: false,
+        resizeDelay: 0,
+      };
+    },
+  },
+  mounted() {
+    window.addEventListener("resize", this.handleResize);
+  },
+  beforeUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+  },
+  methods: {
+    handleResize() {
+      if (this.$refs[this.chartId]) {
+        this.$refs[this.chartId].resize();
+      }
+    },
   },
 };
 </script>
+
+<style scoped>
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+</style>

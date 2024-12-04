@@ -230,6 +230,7 @@ const onDragOver = (event, targetItem) => {
   }
 };
 
+// eslint-disable-next-line no-unused-vars
 const onDragOverLine = (event, targetItem) => {
   event.preventDefault();
   event.dataTransfer.dropEffect = "move";
@@ -348,6 +349,7 @@ const removeDropIndicators = (event) => {
   }
 };
 
+// eslint-disable-next-line no-unused-vars
 const handleOpen = (openedItems) => {
   activeItems.value = [];
   openedItems.forEach((itemTitle) => {
