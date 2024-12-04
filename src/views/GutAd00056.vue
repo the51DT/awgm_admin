@@ -14,6 +14,7 @@
                   item-value="title"
                   activatable
                   return-object
+                  open-all
                   :open-on-click="false"
                   @update:modelValue="handleSelection"
                 >
