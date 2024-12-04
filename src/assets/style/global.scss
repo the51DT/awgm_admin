@@ -314,6 +314,19 @@ body,
 
 .v-treeview {
   max-height: 600px;
+  &.v-list {
+    padding: 0 0;
+  }
+  .v-list-item--slim
+    .v-list-item__prepend
+    > .v-list-item-action
+    ~ .v-list-item__spacer {
+    width: 0;
+    margin-left: -4px;
+  }
+  .v-btn {
+    height: auto !important;
+  }
   .draggable-item {
     cursor: default;
     padding: 10px;
