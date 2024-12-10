@@ -7,9 +7,15 @@
           <v-row>
             <v-col cols="4">
               <v-sheet border="sm">
+                <v-text-field
+                  v-model="search"
+                  placeholder="코드명을 입력해주세요."
+                  @input="filterTree"
+                ></v-text-field>
+
                 <v-treeview
                   v-model="selected"
-                  :items="items"
+                  :items="filteredItems"
                   :opened="initiallyOpen"
                   item-value="title"
                   activatable
@@ -17,6 +23,8 @@
                   open-all
                   :open-on-click="false"
                   @update:modelValue="handleSelection"
+                  :search="search"
+                  :filter="customFilter"
                 >
                   <template v-slot:prepend="{ item }">
                     <div
@@ -163,7 +171,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 const selected = ref([]);
 const initiallyOpen = ref(["public"]);
@@ -424,5 +432,29 @@ const findParents = (items, targetItem, path = []) => {
     }
   }
   return [];
+};
+
+const search = ref("");
+const filteredItems = computed(() => {
+  if (!search.value) {
+    return items.value;
+  }
+  return items.value.filter((item) => customFilter(item));
+});
+
+const customFilter = (item) => {
+  const matchesSearch = item.title
+    .toLowerCase()
+    .includes(search.value.toLowerCase());
+  const hasMatchingChildren = item.children?.some(
+    (child) =>
+      child.title.toLowerCase().includes(search.value.toLowerCase()) ||
+      customFilter(child)
+  );
+  return matchesSearch || hasMatchingChildren;
+};
+
+const filterTree = () => {
+  initiallyOpen.value = filteredItems.value.map((item) => item.title);
 };
 </script>
