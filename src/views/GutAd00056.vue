@@ -10,6 +10,7 @@
                 <v-text-field
                   v-model="search"
                   placeholder="코드명을 입력해주세요."
+                  hide-details
                   @input="filterTree"
                 ></v-text-field>
 
