@@ -190,6 +190,20 @@ body,
   .custom-table {
     max-height: calc(100vh - 400px);
     overflow-y: auto;
+    width: 100%;
+    overflow-x: auto;
+    table {
+      min-width: 1200px;
+    }
+    .v-data-table__wrapper {
+      overflow-x: auto;
+    }
+    .v-data-table__thead {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background-color: white;
+    }
     &.mt-10 {
       margin-top: 20px !important;
     }
@@ -205,6 +219,7 @@ body,
       th {
         font-size: 14px !important;
         font-weight: 700;
+        min-width: 120px;
       }
       td {
         font-size: 13px !important;

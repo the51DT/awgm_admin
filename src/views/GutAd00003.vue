@@ -49,9 +49,7 @@
 
           <!-- Register button on the right -->
           <v-col class="d-flex justify-end">
-            <v-btn class="ml-2 large" variant="flat">
-              등록
-            </v-btn>
+            <v-btn class="ml-2 large" variant="flat"> 등록 </v-btn>
           </v-col>
         </v-row>
       </v-card>
@@ -78,6 +76,16 @@ export default {
         { key: "bannername", title: "배너명" },
         { key: "bannerstate", title: "노출여부" },
         { key: "write", title: "등록자" },
+        { key: "ymdt", title: "등록일시" },
+        { key: "ymdt", title: "등록일시" },
+        { key: "ymdt", title: "등록일시" },
+        { key: "ymdt", title: "등록일시" },
+        { key: "ymdt", title: "등록일시" },
+        { key: "ymdt", title: "등록일시" },
+        { key: "ymdt", title: "등록일시" },
+        { key: "ymdt", title: "등록일시" },
+        { key: "ymdt", title: "등록일시" },
+        { key: "ymdt", title: "등록일시" },
         { key: "ymdt", title: "등록일시" },
       ],
       banner: [
