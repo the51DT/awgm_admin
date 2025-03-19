@@ -271,6 +271,11 @@ export const menuRoutes = [
         path: "/금칙어관리 등록-GutAd00063",
         isCompleted: true,
       },
+      {
+        text: "테스트-GutAd00064",
+        path: "/테스트-GutAd00064",
+        isCompleted: true,
+      },
     ],
   },
 ];
