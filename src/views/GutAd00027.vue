@@ -6,6 +6,62 @@
         <div class="scroll-area">
           <v-row class="input-row" align="center">
             <v-col cols="2">
+              <span>챌린지 타입 *</span>
+            </v-col>
+            <v-col cols="10" class="d-flex">
+              <v-radio-group inline hide-details>
+                <v-radio label="챌린지" value="exposed"></v-radio>
+                <v-radio
+                  label="팀장 PIN 제한 챌린지"
+                  value="notExposed"
+                  class="ml-4"
+                ></v-radio>
+              </v-radio-group>
+            </v-col>
+          </v-row>
+          <v-row class="mt-0">
+            <v-col cols="2"> </v-col>
+            <v-col cols="10" class="d-flex">
+              <span class="blue"
+                >팀장 PIN 제한 챌린지 선택 시 TB_PIN Table 에 있는 ABO/Member
+                회원들만 챌린지 팀을 만들 수 있다.</span
+              >
+            </v-col>
+          </v-row>
+          <v-row class="input-row" align="center">
+            <v-col cols="2">
+              <span>추가미션여부 *</span>
+            </v-col>
+            <v-col cols="10" class="d-flex">
+              <v-radio-group inline hide-details>
+                <v-radio label="NONE" value="type0"></v-radio>
+                <v-radio
+                  label="것모닝 구매인증"
+                  value="type1"
+                  class="ml-4"
+                ></v-radio>
+                <v-radio
+                  label="마이웰니스랩"
+                  value="type2"
+                  class="ml-4"
+                ></v-radio>
+              </v-radio-group>
+            </v-col>
+          </v-row>
+          <v-row class="mt-0">
+            <v-col cols="2"> </v-col>
+            <v-col cols="10" class="d-flex">
+              <span class="blue"
+                >NONE 선택 시 보상 중 바우처를 선택 할 수 없습니다.<br />
+                것모닝 구매인증 선택 시 보상 중 바우처를 선택 할 수 있으며,
+                챌린지 홈화면에서 나의 것모닝 구매 인증 정보가 나타난다.<br />
+                마이웰니스랩 선택 시 보상 중 바우처를 선택 할 수 있으며, 챌린지
+                홈화면에서 마이웰니스랩 정보가 나타난다.
+              </span>
+            </v-col>
+          </v-row>
+          <v-row class="input-row" align="center">
+            <v-col cols="2">
               <span>메인 챌린지명 *</span>
             </v-col>
             <v-col cols="10" class="d-flex">
