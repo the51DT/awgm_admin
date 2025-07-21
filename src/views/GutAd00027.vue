@@ -120,6 +120,15 @@
               ></v-text-field>
             </v-col>
           </v-row>
+          <v-row class="mt-0">
+            <v-col cols="2"> </v-col>
+            <v-col cols="10" class="d-flex">
+              <span class="blue"
+                >팀장이 팀 생성 후 최소인원 수보다 팀원수가 적다면, 챌린지
+                진행일 새벽에 팀을 삭제한다.</span
+              >
+            </v-col>
+          </v-row>
           <v-row class="input-row mt-6" align="center">
             <v-col cols="10">
               <h3>서브 챌린지 설정</h3>
