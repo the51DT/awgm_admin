@@ -76,22 +76,6 @@
               ></v-text-field>
             </v-col>
           </v-row>
-          <v-row class="input-row" align="center">
-            <v-col cols="2">
-              <span>메인 챌린지명 *</span>
-            </v-col>
-            <v-col cols="10" class="d-flex">
-              <v-text-field
-                :loading="loading"
-                density="compact"
-                label="챌린지명을 입력해 주세요."
-                variant="outlined"
-                hide-details
-                single-line
-                @click:append-inner="onClick"
-              ></v-text-field>
-            </v-col>
-          </v-row>
           <v-row class="input-row">
             <v-col cols="2">
               <span>챌린지 안내문구</span>
