@@ -4,7 +4,7 @@
       <v-card class="custom" flat>
         <v-card-title class="card-title">DASHBOARD</v-card-title>
         <div class="scroll-area">
-          <v-sheet class="mt-4 pl-8 pr-8 dash" rounded="lg">
+          <v-sheet class="mt-8 pl-8 pr-8 dash" rounded="lg">
             <v-row class="input-row" align="center">
               <v-col cols="1"></v-col>
               <v-col cols="7">
@@ -15,7 +15,7 @@
               </v-col>
             </v-row>
           </v-sheet>
-          <v-sheet class="mt-4 pl-8 pr-8 dash" rounded="lg">
+          <v-sheet class="mt-6 pl-8 pr-8 dash" rounded="lg">
             <v-row class="input-row" align="center">
               <v-col cols="1"></v-col>
               <v-col cols="7">
@@ -26,7 +26,7 @@
               </v-col>
             </v-row>
           </v-sheet>
-          <v-sheet class="mt-4 pl-8 pr-8 dash" rounded="lg">
+          <v-sheet class="mt-6 pl-8 pr-8 dash" rounded="lg">
             <v-row class="input-row" align="center">
               <v-col cols="1"></v-col>
               <v-col cols="7">
@@ -37,7 +37,7 @@
               </v-col>
             </v-row>
           </v-sheet>
-          <v-sheet class="mt-4 pl-8 pr-8 dash" rounded="lg">
+          <v-sheet class="mt-6 pl-8 pr-8 dash" rounded="lg">
             <v-row class="input-row" align="center">
               <v-col cols="1"></v-col>
               <v-col cols="7">
@@ -48,7 +48,7 @@
               </v-col>
             </v-row>
           </v-sheet>
-          <v-sheet class="mt-4 pl-8 pr-8 dash" rounded="lg">
+          <v-sheet class="mt-6 pl-8 pr-8 dash" rounded="lg">
             <v-row class="input-row" align="center">
               <v-col cols="1"></v-col>
               <v-col cols="7">
@@ -59,7 +59,7 @@
               </v-col>
             </v-row>
           </v-sheet>
-          <v-sheet class="mt-4 pl-8 pr-8 dash" rounded="lg">
+          <v-sheet class="mt-6 pl-8 pr-8 dash" rounded="lg">
             <v-row class="input-row" align="center">
               <v-col cols="1"></v-col>
               <v-col cols="7">
